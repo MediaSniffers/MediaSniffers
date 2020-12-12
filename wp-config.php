@@ -16,6 +16,11 @@ define('SECURE_AUTH_SALT', $_SERVER['SECURE_AUTH_SALT']);
 define('LOGGED_IN_SALT',   $_SERVER['LOGGED_IN_SALT']);
 define('NONCE_SALT',       $_SERVER['NONCE_SALT']);
 $table_prefix  = 'wp_';
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '96M');
+@ini_set( 'memory_limit', '256M' );
+
 define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__) . '/');
