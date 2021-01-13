@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Shortcodes responsive styles
+   ========================================================================== */
+@media only screen and (max-width: 1280px) {
+  .qodef-instagram-list-holder.qodef-il-four-columns .qodef-il-item {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .qodef-instagram-list-holder.qodef-il-four-columns .qodef-il-item:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .qodef-instagram-list-holder.qodef-il-five-columns .qodef-il-item {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .qodef-instagram-list-holder.qodef-il-five-columns .qodef-il-item:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-instagram-list-holder.qodef-il-three-columns .qodef-il-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-instagram-list-holder.qodef-il-three-columns .qodef-il-item:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-instagram-list-holder.qodef-il-four-columns .qodef-il-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-instagram-list-holder.qodef-il-four-columns .qodef-il-item:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-instagram-list-holder.qodef-il-five-columns .qodef-il-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-instagram-list-holder.qodef-il-five-columns .qodef-il-item:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-instagram-list-holder .qodef-il-item {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=../../../../plugins/struktur-instagram-feed/assets/css/shortcodes-map-responsive.css.map */

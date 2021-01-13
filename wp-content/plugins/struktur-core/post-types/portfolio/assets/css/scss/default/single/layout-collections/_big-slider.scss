@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Portfolio Single - Slider layout style - begin
+   ========================================================================== */
+
+.qodef-portfolio-single-holder {
+	
+	&.qodef-ps-big-slider-layout {
+		
+		
+		.qodef-ps-image-holder {
+			margin: 0 0 35px;
+			
+			.qodef-ps-image-inner {
+				visibility: hidden;
+			}
+			
+			.qodef-ps-image {
+				
+				img {
+					width: 100%;
+				}
+			}
+		}
+		
+		.qodef-owl-slider .owl-nav {
+			.owl-next,
+			.owl-prev {
+				color: $default-text-color;
+			}
+		}
+		
+		.qodef-ps-title {
+			margin: 0 0 17px;
+		}
+		
+	}
+}
+/* ==========================================================================
+Portfolio Single - Slider layout style - end
+========================================================================== */

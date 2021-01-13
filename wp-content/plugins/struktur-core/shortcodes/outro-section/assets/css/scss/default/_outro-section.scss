@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Outro Section shortcode style - begin
+   ========================================================================== */
+
+#qodef-outro-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .no-touch & a {
+        cursor: none;
+    }
+}
+
+#qodef-os-main {
+    @include qodefAbsoluteHolderLayout;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .qodef-abs-link {
+        @include qodefAbsoluteHolderLayout;
+    }
+
+    .qodef-os {
+        &-bg {
+            @include qodefAbsoluteHolderLayout;
+            background-color: #181818;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        &-center {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        &-label {
+            .qodef-s-character {
+                font-size: 15.5vw;
+                font-family: $default-text-font;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                color: #525252;
+                line-height: 1.2;
+                display: inline-block;
+                transform: scaleX(-1);
+                opacity: 0;
+
+                @include ipad-landscape {
+                    font-size: 22vw;
+                }
+
+                @include phone-landscape {
+                    display: none;
+                }
+
+                .q-show & {
+                    @for $i from 1 to 10 {
+                        &:nth-child(#{$i}) {
+                            transform: scaleX(1);
+                            opacity: 1;
+                            transition: transform .85s cubic-bezier(0.19, 1, 0.22, 1) ($i*0.1s + .2s), opacity 1s cubic-bezier(0, 0, 0, 1) ($i*0.1s + .2s);
+                        }
+                    }
+                }
+            }
+        }
+
+        &-title {
+            position: absolute;
+            font-size: 75px;
+            letter-spacing: 0;
+            color: $first-main-color;
+            line-height: 1;
+            margin: 2.5vh 0 0;
+            z-index: 20;
+            opacity: 0;
+
+            .q-show & {
+                opacity: 1;
+                transition: opacity .3s .3s;
+            }
+        }
+
+        &-pattern {
+            @include qodefAbsoluteHolderLayout;
+            z-index: 10;
+            width: 120%;
+            left: -10%;
+        }
+
+        &-subtitle {
+            transform-origin: 0 0;
+            opacity: 0;
+            transform: skewY(15deg) scaleY(1.2);
+            transition: transform .65s cubic-bezier(0.19, 1, 0.22, 1) .5s, opacity .4s cubic-bezier(.33, .02, 0, .93) .5s;
+            color: rgba(#fff, .15);
+            margin: 0;
+            text-align: center;
+        }
+
+        &-tagline {
+            transform-origin: 0 0;
+            opacity: 0;
+            transform: skewY(15deg) scaleY(1.2);
+            transition: transform .65s cubic-bezier(0.19, 1, 0.22, 1) .6s, opacity .4s cubic-bezier(.33, .02, 0, .93) .6s;
+            margin: 10px auto 60px;
+            color: rgba(#fff, .15);
+            font-size: 17px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        &-bottom {
+            position: absolute;
+            bottom: 0;
+            visibility: hidden;
+
+            .q-show & {
+                visibility: visible;
+
+                .qodef-os-subtitle,
+                .qodef-os-tagline {
+                    opacity: 1;
+                    transform: skewY(0deg) scaleY(1);
+                }
+            }
+        }
+    }
+}
+
+#qodef-os-link {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity .65s cubic-bezier(.33, .02, 0, .93) 1s;
+
+    .qodef-btn {
+        font-size: 75px;
+        color: $first-main-color;
+        letter-spacing: 0;
+        line-height: 1.05em;
+
+
+        &-text {
+
+            &:before,
+            &:after {
+                height: 5px;
+            }
+        }
+
+        @include phone-landscape {
+            font-size: 50px;
+        }
+    }
+
+    .q-show & {
+        opacity: 1;
+    }
+}
+
+#qodef-os-arrow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    visibility: hidden;
+    text-align: center;
+    transform: scaleX(-1);
+    mix-blend-mode: difference;
+    stroke: #fff;
+
+    .touch & {
+        display: none;
+    }
+
+    &.-show {
+        visibility: visible;
+    }
+}
+
+/* elementor fix */
+
+.elementor-widget-qodef_outro_section {
+    #qodef-outro-section {
+        min-height: 100vh;
+    }
+}
+
+/* ==========================================================================
+   Outro Section shortcode style - end
+   ========================================================================== */

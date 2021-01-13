@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Shortcodes styles
+   ========================================================================== */
+.qodef-instagram-list-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  clear: both;
+}
+
+.qodef-instagram-list-holder:not(.qodef-il-one-column) .qodef-il-item {
+  float: left;
+}
+
+.qodef-instagram-list-holder .qodef-instagram-carousel {
+  margin: 0 !important;
+}
+
+.qodef-instagram-list-holder .qodef-il-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=../../../../plugins/struktur-instagram-feed/assets/css/shortcodes-map.css.map */

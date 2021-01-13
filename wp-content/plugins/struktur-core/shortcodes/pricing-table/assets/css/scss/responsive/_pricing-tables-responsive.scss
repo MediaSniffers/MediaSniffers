@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Pricing Tables shortcode responsive - begin
+   ========================================================================== */
+
+.qodef-price-table {
+    .qodef-pt-inner {
+        
+        @include laptop-landscape-large {
+            .qodef-pt-cl {
+                
+                .qodef-pt-prices {
+                    .qodef-pt-price {
+                        font-size: 105px;
+                    }
+            
+                    .qodef-pt-value {
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+        
+        @include laptop-landscape-mac {
+            .qodef-pt-cl {
+                width: 45%;
+    
+                .qodef-pt-prices {
+                    .qodef-pt-price {
+                        font-size: 90px;
+                    }
+                }
+            }
+            .qodef-pt-cr {
+                width: 55%;
+            }
+        }
+        
+        @include ipad-portrait {
+            .qodef-pt-cl {
+                
+                .qodef-pt-prices {
+                    .qodef-pt-price {
+                        font-size: 85px;
+                    }
+            
+                    .qodef-pt-value {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    .qodef-pricing-tables.qodef-no-space {
+        .qodef-price-table {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+    .qodef-pricing-tables {
+        &.qodef-grid-list.qodef-three-columns {
+            .qodef-item-space:nth-child(2n+1) {
+                clear: both;
+            }
+        
+            .qodef-item-space {
+                width: 50%;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Pricing Tables shortcode responsive - end
+   ========================================================================== */
