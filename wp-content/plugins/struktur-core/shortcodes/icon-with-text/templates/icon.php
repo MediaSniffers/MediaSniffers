@@ -1,1 +1,0 @@
-<?php echo struktur_select_execute_shortcode('qodef_icon', $icon_parameters); ?>

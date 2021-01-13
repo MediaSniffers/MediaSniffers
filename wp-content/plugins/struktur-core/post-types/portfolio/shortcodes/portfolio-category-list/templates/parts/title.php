@@ -1,1 +1,0 @@
-<<?php echo esc_attr( $title_tag ); ?> itemprop="name" class="qodef-pcli-title entry-title"><?php echo esc_html( $title ); ?></<?php echo esc_attr( $title_tag ); ?>>

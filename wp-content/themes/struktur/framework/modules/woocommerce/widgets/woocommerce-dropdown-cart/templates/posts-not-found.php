@@ -1,1 +1,0 @@
-<p class="qodef-empty-cart"><?php esc_html_e( 'No products in the cart.', 'struktur' ); ?></p>

@@ -1,1 +1,0 @@
-<?php do_action( 'struktur_select_get_footer_template' );

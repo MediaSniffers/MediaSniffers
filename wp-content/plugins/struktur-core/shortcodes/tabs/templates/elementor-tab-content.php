@@ -1,1 +1,0 @@
-<div class="qodef-tab-container" id="tab-<?php echo sanitize_title($tab_title); ?>"><p><?php echo do_shortcode($tab_text); ?></p></div>
