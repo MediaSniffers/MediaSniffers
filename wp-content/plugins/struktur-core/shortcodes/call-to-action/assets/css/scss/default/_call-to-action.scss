@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Call To Action shortcode style - begin
+   ========================================================================== */
+
+.qodef-call-to-action-holder {
+	@include qodefRelativeHolderLayout();
+	
+	.qodef-word {
+		.qodef-char {
+			display: inline-block;
+			transform: scaleX(-1);
+			opacity: 0;
+		}
+
+		&.-show {
+			.qodef-char {
+				@for $i from 1 to 10 {
+					&:nth-child(#{$i}) {
+						transform: scaleX(1);
+						opacity: 1;
+						transition: transform .85s cubic-bezier(0.19, 1, 0.22, 1) $i*0.1s, opacity 1s cubic-bezier(0, 0, 0, 1) $i*0.1s;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-cta-text-holder,
+	.qodef-cta-button-holder {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.qodef-cta-text-holder {
+		
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0;
+		}
+	}
+	
+	.qodef-cta-button-holder {
+		
+		.qodef-btn {
+			white-space: nowrap;
+		}
+	}
+	
+	/***** Layout Style - begin *****/
+	
+	&.qodef-normal-layout {
+		
+		.qodef-cta-inner {
+			display: table;
+		}
+		
+		&:not(.qodef-content-in-grid) {
+			
+			.qodef-cta-inner {
+				width: 100%;
+			}
+		}
+		
+		.qodef-cta-text-holder,
+		.qodef-cta-button-holder {
+			display: table-cell;
+			box-sizing: border-box;
+		}
+		
+		.qodef-cta-button-holder {
+			text-align: right;
+		}
+	}
+	
+	&.qodef-simple-layout {
+		
+		.qodef-cta-inner {
+			position: relative;
+			text-align: center;
+		}
+		
+		.qodef-cta-text-holder,
+		.qodef-cta-button-holder {
+			width: 100%;
+		}
+		
+		.qodef-cta-button-holder {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			
+			.qodef-cta-button {
+				position: relative;
+				z-index: 2;
+				
+				a {
+					font-size: 35px;
+					color: $first-main-color;
+					letter-spacing: -0.01em;
+					
+					.qodef-btn-text {
+						&:before,
+						&:after {
+							height: 2px;
+							bottom: 2px;
+						}
+					}
+				}
+			}
+		}
+		
+		.qodef-cta-text {
+			font-size: 236px;
+			font-weight: bold;
+			line-height: 1.2em;
+			letter-spacing: -0.04em;
+			color: $pattern-color;
+		}
+	}
+	
+	/***** Layout Style - end *****/
+	
+	/***** Columns Space - begin *****/
+	
+	&.qodef-two-halves-columns {
+		
+		.qodef-cta-text-holder,
+		.qodef-cta-button-holder {
+			width: 50%;
+		}
+	}
+	
+	&.qodef-two-thirds-columns {
+		
+		.qodef-cta-text-holder {
+			width: 66.66666666666667%;
+		}
+		
+		.qodef-cta-button-holder {
+			width: 33.33333333333333%;
+		}
+	}
+	
+	&.qodef-three-quarters-columns {
+		
+		.qodef-cta-text-holder {
+			width: 75%;
+		}
+		
+		.qodef-cta-button-holder {
+			width: 25%;
+		}
+	}
+	
+	&.qodef-four-fifths-columns {
+		
+		.qodef-cta-text-holder {
+			width: 80%;
+		}
+		
+		.qodef-cta-button-holder {
+			width: 20%;
+		}
+	}
+	
+	/***** Columns Space - end *****/
+}
+/* ==========================================================================
+   Call To Action shortcode style - end
+   ========================================================================== */

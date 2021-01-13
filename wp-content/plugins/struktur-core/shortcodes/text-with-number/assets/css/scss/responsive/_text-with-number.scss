@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Text With Number shortcode responsive styles - begin
+   ========================================================================== */
+
+@media only screen and (max-width: 1024px) and (min-width: 769px)  {
+	.qodef-text-with-number-holder {
+		&.qodef-twn-number-above-text {
+			.qodef-twn-number-holder span {
+				font-size: 150px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+	.qodef-text-with-number-holder {
+		&.qodef-twn-with-separators {
+			.qodef-twn-number-holder span {
+				font-size: 170px;
+			}
+			
+			.qodef-twn-separator {
+				width: 50px;
+			}
+		}
+	}
+
+}
+
+@include laptop-landscape-large {
+	
+	.qodef-text-with-number-holder {
+		padding: 0 !important; // it can be set inline in shortcode options
+	}
+}
+
+@include ipad-landscape {
+	.qodef-text-with-number-item:nth-child(even) {
+		.qodef-twn-separator {
+			display: none;
+		}
+	}
+}
+
+@include phone-landscape {
+	.qodef-text-with-number-item {
+		.qodef-twn-separator {
+			display: none;
+		}
+	}
+}
+
+/* ==========================================================================
+   Text With Number shortcode responsive styles - end
+   ========================================================================== */
+
+

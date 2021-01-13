@@ -1,0 +1,22 @@
+/*
+Theme Name: Struktur Child
+Theme URI: http://struktur.select-themes.com
+Description: A child theme of Struktur Theme
+Author: Select Themes
+Author URI: http://themeforest.net/user/select-themes
+Version: 1.0.0
+Text Domain: struktur
+Template: struktur
+*/
+
+
+.qodef-page-header .qodef-menu-area .qodef-logo-wrapper a {
+    max-height: 50px !important;
+}
+.qodef-sticky-header .qodef-sticky-holder .qodef-logo-wrapper a {
+    max-height: 50px !important;
+}
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-text {
+	font-size: 200px !important;
+}
+.qodef-title-inner .qodef-page-title {visibility: hidden !important; }

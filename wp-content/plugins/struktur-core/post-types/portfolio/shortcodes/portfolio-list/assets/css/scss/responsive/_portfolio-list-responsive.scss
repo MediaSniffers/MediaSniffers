@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Portfolio List repsonsive style - begin
+   ========================================================================== */
+
+.qodef-portfolio-list-holder {
+	
+	@include ipad-portrait {
+		&.qodef-pl-simple {
+			
+			.qodef-pl-simple-holder {
+				margin-bottom: 70px;
+				
+				.qodef-pli-inner {
+					flex-direction: column;
+				}
+				
+				.qodef-pli-text-holder {
+					width: 100%;
+				}
+				
+				.qodef-pli-image-holder {
+					width: calc(100% - 50px);
+					padding-left: 50px;
+				}
+				
+				.qodef-pli-text-holder {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}
+
+/* elementor fix */
+@include ipad-portrait {
+	.elementor-widget-qodef_portfolio_list {
+		.qodef-portfolio-list-holder.qodef-pl-simple {
+			.qodef-pli-image-holder {
+				padding-left: 0 !important;
+				margin-left: 50px !important;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	.qodef-pl-filter-holder {
+		
+		.qodef-pl-filter-toggle {
+			display: none;
+		}
+		
+		ul {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio List repsonsive style - end
+   ========================================================================== */

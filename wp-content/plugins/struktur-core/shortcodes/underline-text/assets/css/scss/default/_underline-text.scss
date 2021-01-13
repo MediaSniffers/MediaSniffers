@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Underline Text shortcode styles - begin
+   ========================================================================== */
+
+.qodef-underline-text-holder {
+    @include qodefRelativeHolderLayout(top);
+	margin: 0;
+	
+	.qodef-ut-underline {
+		border-bottom: 2px solid $first-main-color;
+	}
+}
+
+/* ==========================================================================
+   Underline Text shortcode styles - end
+   ========================================================================== */
+
+

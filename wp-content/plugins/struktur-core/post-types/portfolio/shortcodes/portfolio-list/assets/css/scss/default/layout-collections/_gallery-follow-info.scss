@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery  Follow Info style - begin
+   ========================================================================== */
+
+.qodef-portfolio-list-holder {
+
+    &.qodef-pl-gallery-follow-info {
+
+        &.qodef-pl-has-shadow {
+
+            .qodef-pl-item-inner {
+                box-shadow: $default-box-shadow;
+            }
+        }
+
+        article {
+
+            &:hover {
+                .qodef-pli-text-holder {
+                    opacity: 1;
+                }
+
+                .qodef-pli-image {
+                    transform: translate3d(1%, -1%, 0);
+                    transition-delay: .15s;
+
+                    img {
+                        transform: scale(1.06);
+                    }
+                }
+            }
+
+            .no-touch & {
+                .qodef-pli-text-wrapper {
+                    display: none;
+                }
+            }
+
+            .qodef-pl-item-inner {
+                overflow: hidden;
+            }
+
+            .qodef-pli-text {
+
+                .qodef-pli-title,
+                .qodef-pli-excerpt {
+                    color: #fff;
+                }
+
+                .qodef-pli-title {
+                    line-height: 1em;
+                }
+
+                .qodef-pli-category-holder {
+                    margin: 0;
+
+                    a {
+                        font-size: 17px;
+                        line-height: 1em;
+                        color: #fff;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .qodef-pli-image {
+                transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+                will-change: transform;
+
+                img {
+                    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+                    transform: scale(1.01);
+                    will-change: transform;
+                }
+            }
+        }
+
+        .qodef-pli-text-holder {
+            @include qodefAbsoluteHolderLayout();
+            padding: 20px;
+            background-color: rgba($default-heading-color, 0.85);
+            opacity: 0;
+            text-align: center;
+            box-sizing: border-box;
+            transition: opacity .6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+}
+
+
+.qodef-portfolio-list-holder {
+
+    &.qodef-pl-gallery-follow-info {
+
+        .qodef-pl-inner:not(.qodef-list-is-slider) {
+
+            &:hover,
+            &:hover * {
+                cursor: none;
+            }
+        }
+    }
+}
+
+
+#qodef-pl-info-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    visibility: hidden;
+    text-align: center;
+    transform: translate(-50%, 50%);
+
+    .touch & {
+        display: none;
+    }
+
+    &.-show {
+        visibility: visible;
+    }
+
+    .qodef-pli-title,
+    .qodef-pli-excerpt {
+        color: #fff;
+    }
+
+    .qodef-pli-title {
+        line-height: 1em;
+        margin: 0;
+    }
+
+    .qodef-pli-category-holder {
+        margin: 0;
+
+        a {
+            font-size: 17px;
+            line-height: 1em;
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Follow Info style - end
+   ========================================================================== */

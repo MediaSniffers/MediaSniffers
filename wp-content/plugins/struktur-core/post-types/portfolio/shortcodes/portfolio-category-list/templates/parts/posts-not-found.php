@@ -1,0 +1,1 @@
+<p class="qodef-pcl-not-found"><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'struktur-core' ); ?></p>

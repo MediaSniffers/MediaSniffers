@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-with-text-holder {
+    @include qodefRelativeHolderLayout();
+	
+	.no-touch &.qodef-iwt-custom-cursor {
+		a {
+			cursor: none;
+		}
+	}
+	
+	
+	&.qodef-has-shadow {
+		
+		.qodef-iwt-image {
+			box-shadow: $default-box-shadow;
+		}
+	}
+	
+	.qodef-iwt-image {
+		@include qodefRelativeHolderLayout();
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.qodef-iwt-text-holder {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	.qodef-iwt-title {
+		margin: 1px 0 0;
+	}
+	
+	.qodef-iwt-text {
+		margin: 14px 0 0;
+	}
+	
+	.qodef-iwt-number {
+		display: block;
+		margin: 24px 0 0;
+	}
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-custom-link:not(.qodef-iwt-custom-cursor) {
+		
+		.qodef-iwt-image {
+			
+			a {
+				@include qodefImageOverlayHoverStyle();
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-lightbox {
+		
+		.qodef-iwt-image {
+			
+			a {
+				@include qodefImageOverlayHoverStyle();
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-zoom {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					transform: scale(1.04);
+				}
+			}
+			
+			img {
+				transform: scale(1);
+				transition: transform .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-grayscale {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				transition: all .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+
+	/***** Links Over Image Style - begin *****/
+
+	&.qodef-image-behavior-links-over-image {
+
+		.qodef-iwt-links-holder {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.85);
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		.qodef-iwt-links-holder-inner {
+			display: flex;
+			width: 100%;
+			height: 100%;
+
+			a {
+				position: relative;
+				width: 50%;
+				height: 100%;
+
+				span {
+					display: inline-block;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					margin: 0;
+					font-size: 19.85px;
+					text-transform: capitalize;
+					color: #fff;
+					transition: color 0.2s ease-in-out;
+
+					&:before,
+					&:after {
+						content: '';
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 1px;
+						background-color: currentColor;
+					}
+
+					&:before {
+						transform: scaleX(0);
+						transform-origin: 0 0;
+					}
+
+					&:after {
+						transform-origin: 100% 0;
+					}
+				}
+
+				&:first-child {
+					span {
+						right: 20px;
+					}
+				}
+
+				&:last-child {
+					span {
+						left: 20px;
+					}
+				}
+
+				&:hover {
+
+					span {
+						color: $first-main-color;
+					}
+
+					span:before {
+						transform: scaleX(1);
+						transition: transform .9s cubic-bezier(.19,1,.22,1) .25s;
+					}
+
+					span:after {
+						transform: scaleX(0);
+						transition: -webkit-transform .9s cubic-bezier(.19,1,.22,1);
+					}
+				}
+			}
+		}
+
+		&.qodef-iwt-custom-cursor {
+			.qodef-iwt-image {
+				&:hover {
+					cursor: none;
+				}
+			}
+		}
+	}
+
+	/***** Links Over Image Style - end *****/
+}
+
+#qodef-iwt-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    visibility: hidden;
+    text-align: center;
+	transform: scaleX(-1);
+	mix-blend-mode: difference;
+	stroke: #fff;
+
+    .touch & {
+        display: none;
+    }
+
+    &.-show {
+        visibility: visible;
+    }
+}
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

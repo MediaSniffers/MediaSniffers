@@ -1,0 +1,785 @@
+/* ==========================================================================
+   Vertical Showcase responsive style - begin
+   ========================================================================== */
+
+@media only screen and (max-width: 1600px) {
+    .qodef-vertical-showcase {
+
+        .qodef-vs-frame-holder  {
+        
+            .qodef-vs-frame-mobile-holder {
+            
+                img {
+                    width: 550px;
+                }
+            }
+        }
+    }
+}
+
+@include laptop-landscape-large {
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-frame-holder  {
+        
+            .qodef-vs-frame-mobile-holder {
+            
+                img {
+                    width: 500px;
+                }
+            }
+        }
+
+        .qodef-vs-frame-info {
+
+            &.qodef-vs-frame-even {
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 53px;
+                }
+                
+                .qodef-vs-frame-info-top {
+                    margin-top: -240px;
+    
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(178px);
+                    }
+                }
+            }
+            
+            .qodef-vs-frame-info-bottom {
+                margin-top: 53px;
+        
+                .qodef-vs-frame-subtitle, .qodef-vs-frame-title {
+                    @include qodefTransform(translateX(-576px));
+                }
+            }
+    
+            .qodef-vs-frame-info-top {
+                margin-top: -240px;
+            }
+
+            .qodef-vs-frame-info-other {
+                margin-top: 420px;
+                left: 140px;
+                @include qodefTransform(translateY(-225px));
+                
+                a {
+                    width: 143px;
+                    height: 45px;
+                }
+            }
+
+            &.qodef-vs-frame-animate-out .qodef-vs-frame-info-other {
+                @include qodefTransform(translateY(-300px));
+            }
+        }
+
+        .qodef-vs-contact-form {
+            max-height: 500px;
+
+            .qodef-vs-contact-form-info {
+                margin: -14px 0 23px 0;
+            }
+
+            .qodef-custom-cf7 .qodef-custom-cf7-btn button {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1025px)  {
+    .qodef-vertical-showcase {
+        &.q-odd-visible {
+            .qodef-vs-frame-info {
+                .qodef-vs-frame-info-top {
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(-578px);
+                    }
+                }
+            
+                .qodef-vs-frame-info-bottom {
+                    .qodef-vs-frame-subtitle,
+                    .qodef-vs-frame-title {
+                        transform: translateX(179px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include laptop-landscape-mac {
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-frame-holder  {
+            top: -2%;
+        
+            .qodef-vs-frame-mobile-holder {
+            
+                img {
+                    width: 450px;
+                }
+            }
+        }
+        
+        .qodef-vs-contact-form {
+            max-height: 440px;
+
+            .qodef-vs-contact-form-title h1 {
+                margin: 4px 0;
+            }
+
+            .qodef-vs-contact-form-info {
+                margin: -31px 0 23px 0;
+            }
+        }
+        
+    }
+}
+
+@include ipad-landscape {
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-holder {
+            display: block;
+            
+            .qodef-vs-stripe {
+                top: 50%;
+                left: -100%;
+            }
+
+            .qodef-vs-frame-holder {
+                top: -5%;
+            }
+
+            .qodef-vs-frame-info {
+                width: 100%;
+                height: 100%;
+
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 39%;
+                    }
+    
+                    .qodef-vs-frame-info-top {
+                        margin-top: 11%;
+                    }
+                }
+
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 32%;
+                    left: 42%;
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: 8%;
+                    left: 50%;
+                }
+
+                .qodef-vs-frame-info-other {
+                    margin-top: 70%;
+                    left: 61%;
+                }
+            }
+        }
+    
+        &.q-odd {
+            .qodef-vs-frame-info {
+                .qodef-vs-frame-info-top {
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(-564px);
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-frame-info {
+            
+            .qodef-vs-frame-info-bottom {
+                width: 320px;
+        
+                .qodef-vs-frame-subtitle, .qodef-vs-frame-title {
+                    @include qodefTransform(translateX(-435px));
+                }
+            }
+            
+            
+            .qodef-vs-frame-info-top {
+                .qodef-vs-frame-info-text-with-number {
+                    transform: translateX(150px);
+                }
+            }
+        }
+
+        .qodef-vs-contact-form {
+            
+            .qodef-custom-cf7 {
+
+                .qodef-grid-col-6 {
+                    float: left;
+                    width: 50%;
+                }
+            }
+    
+            .qodef-vs-contact-form-title {
+                h1 {
+                    font-size: 200px;
+                }
+            }
+    
+            .qodef-newsletter-custom-form {
+                padding-top: 0;
+    
+                button.wpcf7-submit.qodef-btn {
+                    top: 13px;
+                }
+            }
+        }
+    }
+}
+
+
+@include ipad-portrait {
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-holder {
+            
+            .qodef-vs-stripe {
+                top: 50%;
+                left: -100%;
+            }
+
+            .qodef-vs-frame-holder {
+                top: 9%;
+            }
+            
+            .qodef-vs-frame-info {
+                width: 100%;
+                height: 100%;
+
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 55%;
+                        left: 39%;
+                    }
+    
+                    .qodef-vs-frame-info-top {
+                        margin-top: 25%;
+                        left: 47%;
+                    }
+    
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(150px);
+                    }
+                }
+
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 55%;
+                    left: 36%;
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: 25%;
+                    left: 52%;
+                }
+    
+                .qodef-vs-frame-info-other {
+                    margin-top: 130%;
+                    left: 50%;
+                }
+            }
+        }
+    
+        &.q-odd {
+            .qodef-vs-frame-info {
+                .qodef-vs-frame-info-top {
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(-542px);
+                    }
+                }
+            }
+        }
+    }
+    
+    .qodef-vertical-showcase {
+
+        &.qodef-vs-last-slide {
+
+            .qodef-vs-frame-holder {
+                @include qodefTransform(translate(-50%, -150%));
+            }
+        }
+    
+        .qodef-vs-frame-holder {
+            .qodef-vs-frame-mobile-holder {
+                img {
+                    width: 400px;
+                }
+            }
+        }
+        
+        .qodef-vs-frame-info {
+
+            &.qodef-vs-frame-even {
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 291px;
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: -400px;
+                }
+            }
+            
+            .qodef-vs-frame-info-bottom {
+                margin-top: -420px;
+                width: 200px;
+
+                .qodef-vs-frame-title {
+                    margin-bottom: 0;
+                }
+
+                .qodef-vs-frame-subtitle {
+                    font-size: 14px;
+                    line-height: 1.6em;
+                }
+        
+                .qodef-vs-frame-subtitle, .qodef-vs-frame-title {
+                    @include qodefTransform(translateX(-280px));
+                }
+            }
+    
+            .qodef-vs-frame-info-top {
+                margin-top: 300px;
+
+                &:after {
+                    content: none;
+                }
+
+                .qodef-vs-frame-slide-number {
+                    font-size: 28px;
+                    margin-top: -74px;
+                }
+                
+                .qodef-vs-frame-title-after-number {
+                    font-size: 28px;
+                }
+
+                .qodef-vs-frame-slide-text {
+                    font-size: 16px;
+                }
+            }
+
+            .qodef-vs-frame-info-other {
+                margin-top: 607px;
+                @include qodefTransform(translate(-50%,-207px));
+            }
+            
+            &.qodef-vs-frame-animate-out .qodef-vs-frame-info-other {
+                @include qodefTransform(translate(-50%,-260px));
+            }
+        }
+
+        .qodef-vs-contact-form {
+            margin-top: -34px;
+            max-height: 630px;
+            padding: 10px;
+
+            .qodef-custom-cf7 {
+
+                .qodef-grid-col-6 {
+                    float: none;
+                    width: 100%;
+                }
+            }
+
+            .qodef-vs-contact-form-info {
+                margin: 22px 0 23px 0;
+
+                .qodef-vs-contact-form-title h1 {
+                    font-size: 160px;
+                }
+
+                .qodef-vs-contact-form-subtitle {
+                    font-size: 14px;
+                }
+            }
+    
+            .qodef-newsletter-custom-form {
+                padding-top: 75px;
+        
+                button.wpcf7-submit.qodef-btn {
+                    top: 85px;
+                }
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+    
+    .qodef-vertical-showcase {
+        margin-top: 0;
+
+        &.qodef-vs-last-slide {
+
+            .qodef-vs-frame-holder {
+                @include qodefTransform(translate(-50%,-150%));
+            }
+        }
+
+        .qodef-vs-holder {
+
+            .qodef-vs-frame-holder  {
+                top: 14%;
+            
+                .qodef-vs-frame-mobile-holder {
+                
+                    img {
+                        width: 250px;
+                    }
+                }
+            }
+
+            .qodef-vs-frame-info {
+    
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 97%;
+                    }
+    
+                    .qodef-vs-frame-info-top {
+                        margin-top: 8%;
+    
+                        .qodef-vs-frame-info-text-with-number {
+                            transform: translateX(-150px);
+                        }
+                    }
+                }
+
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 97%;
+                    left: 14%;
+    
+                    .qodef-vs-frame-subtitle {
+                        display: none;
+                    }
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: 8%;
+                    left: 2%;
+                }
+    
+                .qodef-vs-frame-info-other {
+                    margin-top: 152%;
+                }
+            }
+        }
+
+        .qodef-vs-frame-info {
+            
+            .qodef-vs-frame-info-bottom {
+                margin-top: -287px;
+                width: 334px;
+
+                .qodef-vs-frame-title {
+                    margin-bottom: 0;
+                }
+
+                .qodef-vs-frame-subtitle {
+                    font-size: 13px;
+                }
+        
+                .qodef-vs-frame-subtitle, .qodef-vs-frame-title {
+                    @include qodefTransform(translateX(-150px));
+                }
+            }
+    
+            .qodef-vs-frame-info-top {
+                margin-top: 151px;
+
+                &:after {
+                    content: none;
+                }
+
+                .qodef-vs-frame-slide-number {
+                    margin-top: -74px;
+                }
+            }
+
+            .qodef-vs-frame-info-other {
+                margin-top: 430px;
+                @include qodefTransform(translate(-50%,-207px));
+
+                .qodef-vs-frame-info-other a {
+                    width: 122px;
+                }
+            }
+
+            &.qodef-vs-frame-animate-out .qodef-vs-frame-info-other {
+                @include qodefTransform(translate(-50%,-260px));
+            }
+        }
+
+        .qodef-vs-contact-form {
+            margin-top: -34px;
+            max-height: 562px;
+            padding: 10px;
+
+            .qodef-custom-cf7 {
+
+                .qodef-grid-col-6 {
+                    input {
+                        height: 49px;
+                    }
+                }
+            }
+
+            .qodef-custom-cf7 .qodef-custom-cf7-btn button {
+                margin-top: 36px;
+            }
+
+            .qodef-custom-cf7-btn {
+                margin-top: -33px;
+            }
+
+            .qodef-vs-contact-form-info {
+                margin: 9px 0 23px 0;
+
+                .qodef-vs-contact-form-title h1 {
+                    font-size: 80px;
+                }
+            }
+        }
+        
+        .swiper-pagination {
+            display: none;
+        }
+    
+        &.q-odd {
+            .qodef-vs-frame-info {
+                .qodef-vs-frame-info-top {
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(0);
+                    }
+                }
+    
+                .qodef-vs-frame-info-bottom {
+                    .qodef-vs-frame-subtitle,
+                    .qodef-vs-frame-title {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .qodef-vertical-showcase {
+        
+        .qodef-vs-holder {
+
+            .qodef-vs-frame-holder {
+                top: 15%;
+
+                .qodef-vs-frame-mobile-holder {
+            
+                    img {
+                        width: 200px;
+                    }
+                }
+            }
+
+            .qodef-vs-frame-info {
+                @include qodefTransform(scale(.8));
+    
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 98%;
+                        left: -4%;
+                    }
+    
+                    .qodef-vs-frame-info-top {
+                        margin-top: -5%;
+                    }
+                }
+
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 98%;
+                    left: 5%;
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: -5%;
+                    left: 0;
+                }
+    
+                .qodef-vs-frame-info-other {
+                    margin-top: 175%;
+                }
+            }
+        }
+
+        .qodef-vs-contact-form {
+            margin-top: 15px;
+            max-height: 422px;
+
+            .qodef-vs-contact-form-subtitle {
+                display: none;
+            }
+    
+            .qodef-newsletter-custom-form {
+                padding-top: 50px;
+        
+                button.wpcf7-submit.qodef-btn {
+                    top: 65px;
+                }
+            }
+        }
+        
+        .qodef-vs-frame-info {
+            .qodef-vs-frame-info-top {
+                .qodef-vs-frame-info-text-with-number {
+                    transform: translateX(-45px);
+                }
+            }
+        
+            .qodef-vs-frame-info-bottom {
+                .qodef-vs-frame-subtitle,
+                .qodef-vs-frame-title {
+                    transform: translateX(0);
+                }
+            }
+        }
+    
+        &.q-odd {
+            .qodef-vs-frame-info {
+                .qodef-vs-frame-info-top {
+                    .qodef-vs-frame-info-text-with-number {
+                        transform: translateX(-45px);
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .qodef-vertical-showcase {
+        
+        .qodef-vs-holder {
+            
+            .qodef-vs-frame-holder {
+                top: 18%;
+            }
+            
+            .qodef-vs-frame-info {
+                
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 98%;
+                        left: -14%;
+                    }
+                }
+                
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 98%;
+                    left: -2%;
+                }
+                
+                .qodef-vs-frame-info-top {
+                    margin-top: -5%;
+                    left: -5%;
+                }
+            }
+        }
+    }
+}
+
+// no-flexboxlegacy support
+
+.no-flexboxlegacy {
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-holder {
+            display: block;
+            
+            .qodef-vs-stripe {
+                top: 50%;
+                left: -100%;
+            }
+
+            .qodef-vs-frame-holder {
+                top: 3%;
+            }
+
+            .qodef-vs-frame-info {
+                width: 100%;
+                height: 100%;
+
+                &.qodef-vs-frame-even {
+                    .qodef-vs-frame-info-bottom {
+                        margin-top: 36%;
+                    }
+    
+                    .qodef-vs-frame-info-top {
+                        margin-top: 11%;
+                    }
+                }
+
+                .qodef-vs-frame-info-bottom {
+                    margin-top: 13%;
+                    left: 42%;
+                }
+    
+                .qodef-vs-frame-info-top {
+                    margin-top: 34%;
+                    left: 50%;
+                }
+
+                .qodef-vs-frame-info-other {
+                    margin-top: 33%;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            top: 45%;
+        }
+    }
+
+    .qodef-vertical-showcase {
+
+        .qodef-vs-frame-info {
+    
+            .qodef-vs-frame-info-top {
+                
+                .qodef-vs-frame-slide-number, .qodef-vs-frame-slide-text{
+                    @include qodefTransform(translateX(-450px));
+                }
+            }
+            
+            .qodef-vs-frame-info-bottom {
+        
+                .qodef-vs-frame-subtitle, .qodef-vs-frame-title {
+                    @include qodefTransform(translateX(-500px));
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Vertical Showcase responsive style - end
+   ========================================================================== */

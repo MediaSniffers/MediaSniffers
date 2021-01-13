@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Custom Post Types responsive styles
+   ========================================================================== */
+/* ==========================================================================
+   Portfolio Single page responsive style - begin
+   ========================================================================== */
+.qodef-portfolio-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images {
+  /***** Columns Layout - end *****/
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-portfolio-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images .qodef-ps-image {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-portfolio-single-holder .qodef-ps-info-holder {
+    margin: 30px 0 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Portfolio Single page responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Portfolio List repsonsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 768px) {
+  .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pl-simple-holder {
+    margin-bottom: 70px;
+  }
+  .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pl-simple-holder .qodef-pli-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pl-simple-holder .qodef-pli-text-holder {
+    width: 100%;
+  }
+  .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pl-simple-holder .qodef-pli-image-holder {
+    width: calc(100% - 50px);
+    padding-left: 50px;
+  }
+  .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pl-simple-holder .qodef-pli-text-holder {
+    margin-bottom: 15px;
+  }
+}
+
+/* elementor fix */
+@media only screen and (max-width: 768px) {
+  .elementor-widget-qodef_portfolio_list .qodef-portfolio-list-holder.qodef-pl-simple .qodef-pli-image-holder {
+    padding-left: 0 !important;
+    margin-left: 50px !important;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-pl-filter-holder .qodef-pl-filter-toggle {
+    display: none;
+  }
+  .qodef-pl-filter-holder ul {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   Portfolio List repsonsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Portfolio vertical loop shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 480px) {
+  .qodef-portfolio-vertical-loop-holder .qodef-pvl-navigation-holder {
+    height: 34px;
+  }
+  .qodef-portfolio-vertical-loop-holder article .qodef-pvli-content-holder .qodef-pvli-image-holder .qodef-pvli-image-inner .qodef-pvli-image-title .qodef-pvli-image-title-inner .qodef-pvli-title {
+    font-size: 48px;
+  }
+  .qodef-portfolio-vertical-loop-holder article.next-item .qodef-pvli-content-holder .qodef-pvli-background-text {
+    font-size: 140px;
+  }
+}
+
+/* ==========================================================================
+   Portfolio vertical loop shortcode responsive style - end
+   ========================================================================== */
+@media only screen and (max-width: 680px) {
+  .qodef-testimonials-holder.qodef-testimonials-image-pagination .qodef-testimonials-image-pagination-inner {
+    padding: 0 10px 0 30%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .qodef-testimonials-holder.qodef-testimonials-image-pagination .qodef-testimonials-image-pagination-inner .qodef-testimonial-text {
+    font-size: 15px;
+    line-height: 27px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-testimonials-holder.qodef-testimonials-standard .qodef-testimonials {
+    padding: 0;
+  }
+  .qodef-testimonials-holder.qodef-testimonials-standard .qodef-testimonials-quote {
+    top: 0;
+    right: 0;
+  }
+  .qodef-testimonials-holder.qodef-testimonials-standard .qodef-testimonials-quote img {
+    height: 100px;
+  }
+  .qodef-testimonials-holder.qodef-testimonials-standard .owl-nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-testimonials-holder .qodef-testimonial-text-holder {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=../../../../plugins/struktur-core/assets/css/custom-post-types-map-responsive.css.map */

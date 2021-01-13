@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+
+.qodef-btn {
+    @include qodefButtonDefaultStyle();
+    @include qodefButtonSize();
+    cursor: pointer;
+
+    %line {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -1px;
+        bottom: 1px;
+        width: calc(100% + 2px);
+        height: 1px;
+        background-color: currentColor;
+    }
+    
+    .qodef-btn-text {
+        position: relative;
+
+        &:before {
+            @extend %line;
+            @include qodefTransform(scaleX(0));
+            transform-origin: 0 0;
+        }
+        
+        &:after {
+            @extend %line;
+            transform-origin: 100% 0;
+        }
+    }
+
+    &:hover {
+        .qodef-btn-text {
+    
+            &:before {
+                @include qodefTransform(scaleX(1));
+                transition: transform .9s cubic-bezier(0.19, 1, 0.22, 1) .25s;
+            }
+            
+            &:after {
+                @include qodefTransform(scaleX(0));
+                transition: transform .9s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+    }
+    
+    &.qodef-btn-simple {
+        padding: 0 !important;
+        color: $default-heading-color;
+        background-color: transparent;
+        border: 0;
+        vertical-align: middle;
+
+        .qodef-btn-text {
+            vertical-align: middle;
+        }
+        
+        &:not(.qodef-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: transparent !important;
+        }
+
+        &:not(.qodef-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: transparent !important;
+        }
+    }
+
+    &.qodef-btn-solid {
+        @include qodefButtonSolidColor();
+
+        &:not(.qodef-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            color: #fff !important;
+        }
+
+        &:not(.qodef-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: $default-heading-color !important;
+        }
+
+        &:not(.qodef-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: $default-heading-color !important;
+        }
+    }
+
+    &.qodef-btn-outline {
+	    @include qodefButtonOutlineColor();
+    }
+    
+    &.qodef-btn-small {
+        @include qodefButtonSize(small);
+    }
+    
+    &.qodef-btn-large {
+        @include qodefButtonSize(large);
+    }
+    
+    &.qodef-btn-huge {
+        @include qodefButtonSize(huge);
+    }
+
+    &.qodef-btn-icon {
+
+        > i,
+        > span:not(.qodef-btn-text) {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 0 0 4px;
+            font-size: 1.142857142857143em;
+            line-height: inherit;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */

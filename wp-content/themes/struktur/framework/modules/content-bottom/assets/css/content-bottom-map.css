@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Content Bottom styles - begin
+   ========================================================================== */
+/* ==========================================================================
+   #Content bottom styles - begin
+   ========================================================================== */
+.qodef-content-bottom .qodef-content-bottom-inner {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-content-bottom .qodef-content-bottom-inner.qodef-grid {
+  padding: 20px 0;
+}
+
+.qodef-content-bottom .qodef-content-bottom-inner.qodef-full-width {
+  padding: 20px 40px;
+}
+
+/* ==========================================================================
+   #Content bottom styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Content Bottom styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=content-bottom-map.css.map */

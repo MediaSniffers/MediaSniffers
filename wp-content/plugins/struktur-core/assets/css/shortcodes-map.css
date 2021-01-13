@@ -1,0 +1,6612 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Shortcodes styles
+   ========================================================================== */
+/* ==========================================================================
+   Accordions shortcode style - begin
+   ========================================================================== */
+.qodef-accordion-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  counter-reset: count;
+}
+
+.qodef-accordion-holder .qodef-accordion-title {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out;
+  -o-transition: color .2s ease-out, background-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out;
+  counter-increment: count;
+}
+
+.qodef-accordion-holder .qodef-accordion-title:nth-of-type(-n+99):before {
+  content: "0" counter(count);
+}
+
+.qodef-accordion-holder .qodef-accordion-title:nth-of-type(-n+9):before {
+  content: "00" counter(count);
+}
+
+.qodef-accordion-holder .qodef-accordion-title:before {
+  content: counter(count);
+  position: absolute;
+  left: 0;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-tab-title {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  width: 20px;
+  height: 18px;
+  margin: -1px 0 0;
+  font-size: 17px;
+  line-height: 1em;
+  text-align: center;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span:before {
+  display: block;
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span.qodef_icon_minus {
+  opacity: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span.qodef_icon_plus {
+  opacity: 1;
+}
+
+.qodef-accordion-holder .qodef-accordion-title.ui-state-active .qodef-accordion-mark span.qodef_icon_minus, .qodef-accordion-holder .qodef-accordion-title.ui-state-hover .qodef-accordion-mark span.qodef_icon_minus {
+  opacity: 1;
+}
+
+.qodef-accordion-holder .qodef-accordion-title.ui-state-active .qodef-accordion-mark span.qodef_icon_plus, .qodef-accordion-holder .qodef-accordion-title.ui-state-hover .qodef-accordion-mark span.qodef_icon_plus {
+  opacity: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-content {
+  margin: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-content p {
+  margin: 0;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-title {
+  padding: 30px 0 2px 55px;
+  border-bottom: 1px solid #ccc;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-title.ui-accordion-header-active {
+  border-bottom-color: transparent;
+}
+
+@media only screen and (max-width: 480px) {
+  .qodef-accordion-holder.qodef-ac-simple .qodef-accordion-title {
+    padding: 21px 10% 2px 40px;
+  }
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-content {
+  padding: 12px 0 0 55px;
+}
+
+/* ==========================================================================
+   Accordions shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Anchor Menu shortcode styles begin
+   ========================================================================== */
+.qodef-anchor-menu {
+  position: fixed;
+  top: 50%;
+  left: 48px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  -o-transition: transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  visibility: hidden;
+  z-index: 200;
+}
+
+.qodef-anchor-menu.qodef-init {
+  visibility: visible;
+}
+
+.qodef-anchor-menu .qodef-anchor-menu-items {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  counter-reset: section;
+}
+
+.qodef-anchor-menu .qodef-anchor {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 7px 0;
+  color: #000;
+  font-size: 20px;
+  line-height: 1.35em;
+  font-weight: 700;
+  -webkit-transition: font-size .2s ease;
+  -o-transition: font-size .2s ease;
+  transition: font-size .2s ease;
+}
+
+.qodef-anchor-menu .qodef-anchor:before {
+  position: relative;
+  top: -2px;
+  counter-increment: section;
+  content: counter(section, decimal-leading-zero);
+  margin-right: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: .48;
+}
+
+.qodef-anchor-menu .qodef-anchor.qodef-active {
+  font-size: 30px;
+}
+
+/* ==========================================================================
+   Anchor Menu shortcode styles end
+   ========================================================================== */
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+.qodef-banner-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.touch .qodef-banner-holder {
+  cursor: pointer;
+}
+
+.qodef-banner-holder.qodef-visible-on-hover:hover .qodef-banner-text-holder {
+  opacity: 1;
+}
+
+.qodef-banner-holder.qodef-visible-on-hover .qodef-banner-text-holder {
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.qodef-banner-holder.qodef-disabled .qodef-banner-text-holder {
+  display: none;
+}
+
+.qodef-banner-holder.qodef-banner-info-centered .qodef-banner-text-holder {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.qodef-banner-holder .qodef-banner-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-banner-holder .qodef-banner-image img {
+  display: block;
+}
+
+.qodef-banner-holder .qodef-banner-text-holder {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 25px;
+  }
+}
+
+.qodef-banner-holder .qodef-banner-text-outer {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-text-inner {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.qodef-banner-holder .qodef-banner-subtitle {
+  margin: 0 0 4px;
+  color: #fff;
+}
+
+.qodef-banner-holder .qodef-banner-title {
+  margin: 0;
+  color: #fff;
+}
+
+.qodef-banner-holder .qodef-banner-title .qodef-banner-title-light {
+  font-weight: 300;
+}
+
+.qodef-banner-holder .qodef-banner-link-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 11px 0 0;
+  color: #fff;
+  line-height: 1em;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.qodef-banner-holder .qodef-banner-link-text:hover .qodef-banner-link-hover {
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-original {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-original span {
+  color: inherit;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.1%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: width .4s ease-in-out;
+  -o-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-hover span {
+  color: #e84945;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-icon,
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-label {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-icon {
+  margin: 0 2px 0 0;
+  font-size: 15px;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-label {
+  font-size: 14px;
+  line-height: inherit;
+}
+
+.qodef-banner-holder .qodef-banner-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+.qodef-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 0;
+  font-family: inherit;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  padding: 11px 32px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.qodef-btn .qodef-btn-text:before, .qodef-btn .qodef-btn-text:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -1px;
+  bottom: 1px;
+  width: calc(100% + 2px);
+  height: 1px;
+  background-color: currentColor;
+}
+
+.qodef-btn .qodef-btn-text {
+  position: relative;
+}
+
+.qodef-btn .qodef-btn-text:before {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.qodef-btn .qodef-btn-text:after {
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.qodef-btn:hover .qodef-btn-text:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  -o-transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s, -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+}
+
+.qodef-btn:hover .qodef-btn-text:after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.qodef-btn.qodef-btn-simple {
+  padding: 0 !important;
+  color: #000;
+  background-color: transparent;
+  border: 0;
+  vertical-align: middle;
+}
+
+.qodef-btn.qodef-btn-simple .qodef-btn-text {
+  vertical-align: middle;
+}
+
+.qodef-btn.qodef-btn-simple:not(.qodef-btn-custom-hover-bg):hover {
+  background-color: transparent !important;
+}
+
+.qodef-btn.qodef-btn-simple:not(.qodef-btn-custom-border-hover):hover {
+  border-color: transparent !important;
+}
+
+.qodef-btn.qodef-btn-solid {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid transparent;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-hover-color):hover {
+  color: #fff !important;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-hover-bg):hover {
+  background-color: #000 !important;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-border-hover):hover {
+  border-color: #000 !important;
+}
+
+.qodef-btn.qodef-btn-outline {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+.qodef-btn.qodef-btn-small {
+  padding: 8px 20px;
+  font-size: 17px;
+}
+
+.qodef-btn.qodef-btn-large {
+  padding: 17px 39px;
+  font-size: 25px;
+}
+
+.qodef-btn.qodef-btn-huge {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 17px 39px;
+  font-size: 25px;
+}
+
+.qodef-btn.qodef-btn-icon > i,
+.qodef-btn.qodef-btn-icon > span:not(.qodef-btn-text) {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 4px;
+  font-size: 1.142857142857143em;
+  line-height: inherit;
+}
+
+.qodef-btn.qodef-btn-icon > i:before,
+.qodef-btn.qodef-btn-icon > span:not(.qodef-btn-text):before {
+  display: block;
+  line-height: inherit;
+}
+
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Call To Action shortcode style - begin
+   ========================================================================== */
+.qodef-call-to-action-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Layout Style - begin *****/
+  /***** Layout Style - end *****/
+  /***** Columns Space - begin *****/
+  /***** Columns Space - end *****/
+}
+
+.qodef-call-to-action-holder .qodef-word .qodef-char {
+  display: inline-block;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(1) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(2) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.2s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.2s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.2s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.2s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.2s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(3) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(4) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(5) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(6) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(7) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(8) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+}
+
+.qodef-call-to-action-holder .qodef-word.-show .qodef-char:nth-child(9) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+}
+
+.qodef-call-to-action-holder .qodef-cta-text-holder,
+.qodef-call-to-action-holder .qodef-cta-button-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-call-to-action-holder .qodef-cta-text-holder h1, .qodef-call-to-action-holder .qodef-cta-text-holder h2, .qodef-call-to-action-holder .qodef-cta-text-holder h3, .qodef-call-to-action-holder .qodef-cta-text-holder h4, .qodef-call-to-action-holder .qodef-cta-text-holder h5, .qodef-call-to-action-holder .qodef-cta-text-holder h6 {
+  margin: 0;
+}
+
+.qodef-call-to-action-holder .qodef-cta-button-holder .qodef-btn {
+  white-space: nowrap;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-inner {
+  display: table;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout:not(.qodef-content-in-grid) .qodef-cta-inner {
+  width: 100%;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-button-holder {
+  display: table-cell;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-button-holder {
+  text-align: right;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-inner {
+  position: relative;
+  text-align: center;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder {
+  width: 100%;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder .qodef-cta-button {
+  position: relative;
+  z-index: 2;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder .qodef-cta-button a {
+  font-size: 35px;
+  color: #e84945;
+  letter-spacing: -0.01em;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder .qodef-cta-button a .qodef-btn-text:before, .qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder .qodef-cta-button a .qodef-btn-text:after {
+  height: 2px;
+  bottom: 2px;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-text {
+  font-size: 236px;
+  font-weight: bold;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+  color: #f3a4a2;
+}
+
+.qodef-call-to-action-holder.qodef-two-halves-columns .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-two-halves-columns .qodef-cta-button-holder {
+  width: 50%;
+}
+
+.qodef-call-to-action-holder.qodef-two-thirds-columns .qodef-cta-text-holder {
+  width: 66.66666666666667%;
+}
+
+.qodef-call-to-action-holder.qodef-two-thirds-columns .qodef-cta-button-holder {
+  width: 33.33333333333333%;
+}
+
+.qodef-call-to-action-holder.qodef-three-quarters-columns .qodef-cta-text-holder {
+  width: 75%;
+}
+
+.qodef-call-to-action-holder.qodef-three-quarters-columns .qodef-cta-button-holder {
+  width: 25%;
+}
+
+.qodef-call-to-action-holder.qodef-four-fifths-columns .qodef-cta-text-holder {
+  width: 80%;
+}
+
+.qodef-call-to-action-holder.qodef-four-fifths-columns .qodef-cta-button-holder {
+  width: 20%;
+}
+
+/* ==========================================================================
+   Call To Action shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Clients Carousel shortcode style - begin
+   ========================================================================== */
+.qodef-clients-carousel-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.touch .qodef-clients-carousel-holder .qodef-cc-item {
+  cursor: pointer;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-item img {
+  display: block;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/***** Hover Types - begin *****/
+.qodef-cc-hover-switch-images .qodef-cc-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-hover-image {
+  opacity: 1;
+  -webkit-transition: opacity .15s ease-out;
+  -o-transition: opacity .15s ease-out;
+  transition: opacity .15s ease-out;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-image {
+  opacity: 0;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-hover-image {
+  opacity: 1;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link .qodef-cc-hover-image {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item .qodef-cc-image {
+  width: auto;
+  opacity: 1;
+  will-change: opacity;
+  -webkit-transition: opacity .15s ease-out;
+  -o-transition: opacity .15s ease-out;
+  transition: opacity .15s ease-out;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item .qodef-cc-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item {
+  overflow: hidden;
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-image {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-hover-image {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-image {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-hover-image {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item .qodef-cc-image {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  -o-transition: transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item .qodef-cc-hover-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  -o-transition: transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+/***** Hover Types - end *****/
+/* ==========================================================================
+   Clients Carousel shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   clients Holder shortcode style - begin
+   ========================================================================== */
+.qodef-clients-grid-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.qodef-clients-grid-holder.qodef-cg-alignment-left {
+  text-align: left;
+}
+
+.qodef-clients-grid-holder.qodef-cg-alignment-right {
+  text-align: right;
+}
+
+.qodef-clients-grid-holder .qodef-cc-link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* ==========================================================================
+   clients Holder shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Countdown shortcode style - begin
+   ========================================================================== */
+.qodef-countdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-countdown.qodef-light-skin .countdown-row .countdown-section .countdown-amount,
+.qodef-countdown.qodef-light-skin .countdown-row .countdown-section .countdown-period {
+  color: #fff;
+}
+
+.qodef-countdown .countdown-rtl {
+  direction: rtl;
+}
+
+.qodef-countdown .countdown-row {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  clear: both;
+}
+
+.qodef-countdown .countdown-row.countdown-show1 .countdown-section {
+  width: 100%;
+}
+
+.qodef-countdown .countdown-row.countdown-show2 .countdown-section {
+  width: 50%;
+}
+
+.qodef-countdown .countdown-row.countdown-show3 .countdown-section {
+  width: 33.33333%;
+}
+
+.qodef-countdown .countdown-row.countdown-show4 .countdown-section {
+  width: 25%;
+}
+
+.qodef-countdown .countdown-row.countdown-show5 .countdown-section {
+  width: 20%;
+}
+
+.qodef-countdown .countdown-row.countdown-show6 .countdown-section {
+  width: 16.66667%;
+}
+
+.qodef-countdown .countdown-row .countdown-section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-countdown .countdown-row .countdown-section .countdown-amount {
+  position: relative;
+  display: block;
+  color: #000;
+  font-size: 72px;
+  line-height: 1em;
+  font-weight: 600;
+}
+
+.qodef-countdown .countdown-row .countdown-section .countdown-period {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Countdown shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Counter shortcode style - begin
+   ========================================================================== */
+.qodef-counter-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+
+.qodef-counter-holder .qodef-counter-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-counter-holder .qodef-counter {
+  height: 1em;
+  display: inline-block !important;
+  vertical-align: middle;
+  color: #000;
+  font-size: 48px;
+  line-height: 1em;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.qodef-counter-holder .qodef-counter-title {
+  margin: 5px 0 0;
+}
+
+.qodef-counter-holder .qodef-counter-text {
+  margin: 14px 0 0;
+}
+
+/* ==========================================================================
+   Counter shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Custom Font shortcode style - begin
+   ========================================================================== */
+.qodef-custom-font-holder .qodef-cf-typed-wrap {
+  width: 0;
+  white-space: nowrap;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed {
+  display: inline-block;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed span {
+  display: none;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed ~ .typed-cursor {
+  display: inline-block;
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  50% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  50% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+
+/* ==========================================================================
+   Custom Font shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Dropcaps shortcode style - begin
+   ========================================================================== */
+.qodef-dropcaps {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  line-height: 42px;
+  font-size: 42px;
+  color: #999;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 7px 0 0;
+}
+
+.qodef-dropcaps.qodef-square, .qodef-dropcaps.qodef-circle {
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  margin: 6px 9px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-dropcaps.qodef-circle {
+  border-radius: 3em;
+}
+
+/* ==========================================================================
+   Dropcaps shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Elements Holder shortcode style - begin
+   ========================================================================== */
+.qodef-elements-holder {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.qodef-elements-holder.qodef-eh-full-height {
+  height: 100%;
+}
+
+.qodef-elements-holder.qodef-ehi-float .qodef-eh-item {
+  float: left;
+}
+
+.qodef-elements-holder.qodef-two-columns .qodef-eh-item {
+  width: 50%;
+}
+
+.qodef-elements-holder.qodef-three-columns .qodef-eh-item {
+  width: 33.33333%;
+}
+
+.qodef-elements-holder.qodef-four-columns .qodef-eh-item {
+  width: 25%;
+}
+
+.qodef-elements-holder.qodef-five-columns .qodef-eh-item {
+  width: 20%;
+}
+
+.qodef-elements-holder.qodef-six-columns .qodef-eh-item {
+  width: 16.66667%;
+}
+
+.qodef-elements-holder .qodef-eh-item {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-vertical-alignment-top {
+  vertical-align: top;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-vertical-alignment-bottom {
+  vertical-align: bottom;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-horizontal-alignment-center {
+  text-align: center;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-horizontal-alignment-right {
+  text-align: right;
+}
+
+.qodef-elements-holder .qodef-eh-item .qodef-elements-holder-item-inner {
+  width: 100%;
+}
+
+.qodef-elements-holder .qodef-ehi-content {
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Elements Holder shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Full Screen Sections shortcode style - begin
+   ========================================================================== */
+html.fp-enabled,
+.fp-enabled body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*Avoid flicker on slides transitions for mobile phones #336 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#superContainer {
+  height: 100%;
+  position: relative;
+  /* Touch detection for Windows 8 */
+  -ms-touch-action: none;
+  /* IE 11 on Windows Phone 8.1*/
+  touch-action: none;
+}
+
+.fp-scrollable {
+  overflow: hidden;
+  position: relative;
+}
+
+.fp-scroller {
+  overflow: hidden;
+}
+
+.iScrollIndicator {
+  border: 0 !important;
+}
+
+.fp-notransition {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.fp-auto-height.qodef-fss-item,
+.fp-auto-height .qodef-fss-slide,
+.fp-auto-height .fp-tableCell {
+  height: auto !important;
+}
+
+.fp-responsive .fp-auto-height-responsive.qodef-fss-item,
+.fp-responsive .fp-auto-height-responsive .qodef-fss-slide,
+.fp-responsive .fp-auto-height-responsive .fp-tableCell {
+  height: auto !important;
+}
+
+#fp-nav {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  margin: -32px 0 0;
+  z-index: 1001;
+}
+
+@media only screen and (max-width: 1024px) {
+  #fp-nav {
+    right: 30px;
+  }
+}
+
+#fp-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#fp-nav ul li {
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+}
+
+#fp-nav ul li a {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  display: block;
+  background-color: rgba(80, 80, 80, 0.3);
+  border-radius: 100%;
+  z-index: 1;
+  -webkit-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+#fp-nav ul li a.active, #fp-nav ul li a:hover {
+  background-color: rgba(80, 80, 80, 0.7);
+}
+
+.qodef-light-header #fp-nav ul li a span {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.qodef-light-header #fp-nav ul li a.active span, .qodef-light-header #fp-nav ul li a:hover span {
+  background-color: #fff;
+}
+
+.qodef-dark-header #fp-nav ul li a span {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.qodef-dark-header #fp-nav ul li a.active span, .qodef-dark-header #fp-nav ul li a:hover span {
+  background-color: #000;
+}
+
+#fp-nav ul li a span {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.qodef-full-screen-sections {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-full-screen-sections .qodef-fss-wrapper {
+  visibility: hidden;
+}
+
+.qodef-full-screen-sections .qodef-fss-item {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.active {
+  -webkit-transform: scale(0.92);
+  -ms-transform: scale(0.92);
+  transform: scale(0.92);
+}
+
+.qodef-full-screen-sections .qodef-fss-item.active.fp-completely {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-full-screen-sections .qodef-fss-item.fp-completely:not(.active) {
+  -webkit-transform: scale(0.92);
+  -ms-transform: scale(0.92);
+  transform: scale(0.92);
+}
+
+.qodef-full-screen-sections .qodef-fss-item .fp-scroller > .vc_column_container {
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-full-screen-sections .qodef-fss-item .fp-scroller > .vc_column_container > .vc_column-inner {
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-va-top .qodef-fss-item-inner {
+  vertical-align: top;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-va-bottom .qodef-fss-item-inner {
+  vertical-align: bottom;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-ha-left .qodef-fss-item-inner {
+  text-align: left;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-ha-center .qodef-fss-item-inner {
+  text-align: center;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-ha-right .qodef-fss-item-inner {
+  text-align: right;
+}
+
+.qodef-full-screen-sections .qodef-fss-item.qodef-fss-item-has-link .qodef-fss-item-inner a {
+  position: relative;
+  z-index: 2;
+}
+
+.qodef-full-screen-sections .qodef-fss-item .qodef-fss-item-inner {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  padding: 5%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-full-screen-sections .qodef-fss-item .qodef-fss-item-inner a {
+  position: relative;
+  z-index: 2;
+}
+
+.qodef-full-screen-sections .qodef-fss-item .qodef-fss-item-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.qodef-full-screen-sections .qodef-fss-nav-holder {
+  position: fixed;
+  bottom: 48px;
+  left: 57px;
+  display: block;
+  width: 55px;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1001;
+}
+
+.qodef-full-screen-sections .qodef-fss-nav-holder a {
+  display: block;
+  font-size: 55px;
+  line-height: 0.9;
+  color: #000;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: color .2s ease-out, opacity .25s ease-out;
+  -o-transition: color .2s ease-out, opacity .25s ease-out;
+  transition: color .2s ease-out, opacity .25s ease-out;
+}
+
+.qodef-full-screen-sections .qodef-fss-nav-holder a:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.qodef-light-header .qodef-full-screen-sections .qodef-fss-nav-holder a {
+  color: #fff;
+}
+
+.qodef-light-header .qodef-full-screen-sections .qodef-fss-nav-holder a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.qodef-dark-header .qodef-full-screen-sections .qodef-fss-nav-holder a {
+  color: #000;
+}
+
+.qodef-dark-header .qodef-full-screen-sections .qodef-fss-nav-holder a:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.qodef-full-screen-sections .qodef-fss-nav-holder a span {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-full-screen-sections .qodef-fss-nav-holder a span:before {
+  display: block;
+  line-height: inherit;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-full-screen-sections .qodef-fss-nav-holder {
+    bottom: 28px;
+    left: 37px;
+  }
+}
+
+/* ==========================================================================
+   Full Screen Sections shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Google Map shortcode style - begin
+   ========================================================================== */
+.qodef-google-map-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-google-map-holder .qodef-google-map-direction {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #464646;
+  background-color: #fff;
+  z-index: 999;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-google-map-holder .qodef-google-map-direction:hover {
+  color: #000;
+}
+
+.qodef-google-map-holder .qodef-google-map {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.qodef-google-map-holder .qodef-google-map iframe,
+.qodef-google-map-holder .qodef-google-map object,
+.qodef-google-map-holder .qodef-google-map embed {
+  width: 100%;
+  display: block;
+}
+
+.qodef-google-map-holder .qodef-google-map img {
+  max-width: none;
+}
+
+.qodef-google-map-holder .qodef-snazzy-map {
+  display: none;
+}
+
+.qodef-google-map-holder .qodef-google-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+/* ==========================================================================
+   Google Map shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Horizontal Layout shortcode style - begin
+   ========================================================================== */
+.qodef-hl-items-wrapper {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  width: 100vw;
+}
+
+@media screen and (min-width: 1025px) {
+  .qodef-header-vertical-sliding .qodef-hl-items-wrapper {
+    left: 85px;
+    width: calc(100vw - 85px);
+  }
+}
+
+.qodef-hl-item {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  min-width: 372px;
+  width: 372px;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  background-color: #fff;
+}
+
+.qodef-hl-item:nth-last-of-type(2) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.qodef-hl-item:first-child {
+  width: 50vw;
+}
+
+.qodef-hli-grid {
+  position: absolute;
+  right: 10px;
+  width: calc(100% - 20px);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.qodef-hli-num {
+  position: relative;
+  font-size: 7.3vw;
+  font-weight: 900;
+  color: #f3a4a2;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-hli-num {
+    font-size: 100px;
+  }
+}
+
+.qodef-hli-pattern {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-hli-mid {
+  width: 350px;
+  margin-top: 30vh;
+  margin-bottom: 45px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-hli-mid {
+    margin-top: 20vh;
+  }
+}
+
+.qodef-hli-title {
+  margin-top: 0;
+}
+
+.qodef-hli-text {
+  color: #000;
+  margin-bottom: 0;
+}
+
+.qodef-hli-btm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.qodef-hli-btm-inner {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-hl-item:not(:first-child) .qodef-hli-btm-inner {
+  height: 50%;
+}
+
+.qodef-hli-btm-item {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-hli-image {
+  overflow: hidden;
+}
+
+.qodef-hli-image img {
+  height: 100% !important;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .qodef-hli-image img {
+    width: auto;
+  }
+}
+
+.qodef-hli-video video {
+  height: 100%;
+  width: 100%;
+  max-width: 100;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .qodef-hli-video video {
+    width: auto;
+  }
+}
+
+.qodef-hl-cta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100vw;
+  padding: 30px 45px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1025px) {
+  .qodef-hl-cta {
+    width: 50vw;
+  }
+  .qodef-header-vertical-sliding .qodef-hl-cta {
+    width: calc(50vw - 85px);
+  }
+}
+
+.qodef-hl-cta-title {
+  font-size: 50px;
+  line-height: 1.06em;
+  max-width: 60%;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-hl-cta-title {
+    max-width: 100%;
+  }
+}
+
+.qodef-hl-cta .qodef-hl-cta-widget {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.qodef-hl-cta .qodef-hl-cta-widget .widget {
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.qodef-hl-cta .qodef-hl-cta-widget .widget a {
+  color: #000;
+}
+
+.qodef-hl-cta .qodef-hl-cta-widget .widget a:hover {
+  color: #e84945;
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-hl-cta .qodef-hl-cta-widget {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Horizontal Layout shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Horizontal Timeline shortcode style - begin
+   ========================================================================== */
+.qodef-horizontal-timeline {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.qodef-horizontal-timeline:before {
+  content: 'desktop';
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-horizontal-timeline:before {
+    content: 'mobile';
+  }
+}
+
+.qodef-horizontal-timeline.qodef-loaded {
+  opacity: 1;
+}
+
+.qodef-horizontal-timeline *,
+.qodef-horizontal-timeline *:before,
+.qodef-horizontal-timeline *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-horizontal-timeline ol, .qodef-horizontal-timeline ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 20px);
+  height: 60px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  height: 2px;
+  background-color: #cdcdcd;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  -o-transition: transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a {
+  position: absolute;
+  bottom: 0;
+  padding: 0 0 6px;
+  color: #bfbfbf;
+  font-size: 23px;
+  line-height: 34px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 2;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a:hover:after {
+  background-color: #000;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a.qodef-selected {
+  pointer-events: none;
+  color: #000;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a.qodef-selected:after {
+  background-color: #000;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a.qodef-older-event:after {
+  background-color: #000;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-inner a:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: calc(50% - 5px);
+  right: auto;
+  height: 6px;
+  width: 6px;
+  background-color: #cdcdcd;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-filling-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  z-index: 1;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a {
+  position: absolute;
+  bottom: -1px;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a:after {
+  display: block;
+  font-family: 'ElegantIcons';
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a.qodef-prev {
+  left: -8px;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a.qodef-prev:after {
+  content: "\34";
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a.qodef-next {
+  right: -8px;
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a.qodef-next:after {
+  content: "\35";
+}
+
+.qodef-horizontal-timeline .qodef-ht-nav-navigation a.qodef-inactive {
+  cursor: not-allowed;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin-top: 70px;
+  overflow: hidden;
+  -webkit-transition: height 0.4s;
+  -o-transition: height 0.4s;
+  transition: height 0.4s;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content .qodef-hti-content-inner {
+  margin: 0 -25px;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content .qodef-hti-content-inner.qodef-timeline-has-image > * {
+  width: 50%;
+  float: left;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content .qodef-hti-content-inner > * {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding: 0 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.qodef-horizontal-timeline .qodef-ht-content li.qodef-selected {
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.qodef-horizontal-timeline .qodef-ht-content li.qodef-enter-left, .qodef-horizontal-timeline .qodef-ht-content li.qodef-leave-left {
+  -webkit-animation-name: qodef-enter-left;
+  animation-name: qodef-enter-left;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content li.qodef-enter-right, .qodef-horizontal-timeline .qodef-ht-content li.qodef-leave-right {
+  -webkit-animation-name: qodef-enter-right;
+  animation-name: qodef-enter-right;
+}
+
+.qodef-horizontal-timeline .qodef-ht-content li.qodef-leave-left, .qodef-horizontal-timeline .qodef-ht-content li.qodef-leave-right {
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes qodef-enter-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes qodef-enter-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes qodef-enter-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes qodef-enter-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+/* ==========================================================================
+   Horizontal Timeline shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon List Item shortcode style - begin
+   ========================================================================== */
+.qodef-icon-list-holder {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: auto;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder,
+.qodef-icon-list-holder .qodef-il-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder {
+  width: 1%;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder > * {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: #000;
+  font-size: 17px;
+  line-height: inherit;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder > *:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-icon-list-holder .qodef-il-text {
+  width: 99%;
+  padding: 0 0 0 13px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Icon List Item shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+.qodef-iwt {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-iwt .qodef-iwt-icon a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode {
+  line-height: 1;
+}
+
+.qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-circle, .qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-square, .qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-dropcaps.qodef-circle {
+  line-height: 2;
+}
+
+.qodef-iwt .qodef-iwt-title {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+.qodef-iwt .qodef-iwt-title a {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-iwt .qodef-iwt-title-text {
+  display: block;
+}
+
+.qodef-iwt .qodef-iwt-text {
+  margin: 20px 0 0;
+}
+
+.qodef-iwt.qodef-iwt-icon-left {
+  width: auto;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon,
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-content {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon {
+  position: relative;
+  top: 1px;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon img {
+  max-width: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-content {
+  padding: 0 0 0 13px;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon,
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-title-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon .qodef-icon-element {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon img {
+  max-width: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-title-text {
+  padding: 0 0 0 17px;
+}
+
+.qodef-iwt.qodef-iwt-icon-top {
+  text-align: center;
+}
+
+.qodef-iwt.qodef-iwt-icon-top .qodef-iwt-content {
+  padding: 23px 0 0;
+}
+
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon shortcode style - begin
+   ========================================================================== */
+.qodef-icon-shortcode {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1em;
+}
+
+.qodef-icon-shortcode.qodef-circle, .qodef-icon-shortcode.qodef-square, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background-color: #e84945;
+  -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+  -o-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.qodef-icon-shortcode.qodef-circle a, .qodef-icon-shortcode.qodef-square a, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle a {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-icon-shortcode.qodef-circle .qodef-icon-element, .qodef-icon-shortcode.qodef-square .qodef-icon-element, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle .qodef-icon-element {
+  color: #fff;
+  line-height: inherit;
+}
+
+.qodef-icon-shortcode.qodef-circle {
+  border-radius: 50%;
+}
+
+.qodef-icon-shortcode .qodef-icon-element {
+  display: block;
+  line-height: inherit;
+  -webkit-transition: color .15s ease-in-out;
+  -o-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+}
+
+.qodef-icon-shortcode .qodef-icon-element:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-icon-animation-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: -webkit-transform 0.15s ease-in-out;
+  -o-transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+
+.qodef-icon-animation-holder.qodef-icon-animation-show {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-icon-tiny {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+
+.qodef-icon-small {
+  font-size: 2em;
+}
+
+.qodef-icon-medium {
+  font-size: 3em;
+}
+
+.qodef-icon-large {
+  font-size: 4em;
+}
+
+.qodef-icon-huge {
+  font-size: 5em;
+}
+
+/* ==========================================================================
+   Icon shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+.qodef-image-gallery {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Image Gallery Masonry Style - begin *****/
+  /***** Image Gallery Masonry Style - end *****/
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+}
+
+.qodef-image-gallery.qodef-has-shadow .qodef-ig-image-inner {
+  -webkit-box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+}
+
+.qodef-image-gallery.qodef-has-shadow.qodef-ig-slider-type .owl-stage-outer, .qodef-image-gallery.qodef-has-shadow.qodef-ig-carousel-type .owl-stage-outer {
+  padding: 0 0 20px;
+}
+
+.qodef-image-gallery.qodef-has-shadow.qodef-ig-slider-type .qodef-ig-image, .qodef-image-gallery.qodef-has-shadow.qodef-ig-carousel-type .qodef-ig-image {
+  -webkit-box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+}
+
+.qodef-image-gallery .qodef-ig-image a, .qodef-image-gallery .qodef-ig-image img {
+  position: relative;
+  display: block;
+}
+
+.qodef-image-gallery .qodef-ig-image-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-gallery .qodef-ig-slider {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-gallery.qodef-ig-masonry-type .qodef-ig-image.qodef-fixed-masonry-item .qodef-ig-image-inner,
+.qodef-image-gallery.qodef-ig-masonry-type .qodef-ig-image.qodef-fixed-masonry-item a {
+  height: 100%;
+}
+
+.qodef-image-gallery.qodef-image-behavior-custom-link .qodef-ig-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-image-gallery.qodef-image-behavior-custom-link .qodef-ig-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-image-gallery.qodef-image-behavior-lightbox .qodef-ig-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-image-gallery.qodef-image-behavior-lightbox .qodef-ig-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.touch .qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image {
+  cursor: pointer;
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image .qodef-ig-image-inner {
+  overflow: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image {
+  cursor: pointer;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* ==========================================================================
+   Image Gallery shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+.qodef-image-marquee-holder {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.qodef-image-marquee-holder .qodef-image-marquee {
+  position: relative;
+  width: 124%;
+  left: -12%;
+}
+
+.qodef-image-marquee-holder .qodef-image img {
+  display: block;
+}
+
+.qodef-image-marquee-holder .qodef-image.qodef-original {
+  position: relative;
+}
+
+.qodef-image-marquee-holder .qodef-image.qodef-aux {
+  position: absolute;
+  top: 0;
+}
+
+/* ==========================================================================
+	Image Gallery shortcode style - begin
+	========================================================================== */
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+.qodef-image-with-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+  /***** Links Over Image Style - begin *****/
+  /***** Links Over Image Style - end *****/
+}
+
+.no-touch .qodef-image-with-text-holder.qodef-iwt-custom-cursor a {
+  cursor: none;
+}
+
+.qodef-image-with-text-holder.qodef-has-shadow .qodef-iwt-image {
+  -webkit-box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+}
+
+.qodef-image-with-text-holder .qodef-iwt-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-image a, .qodef-image-with-text-holder .qodef-iwt-image img {
+  position: relative;
+  display: block;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-title {
+  margin: 1px 0 0;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-text {
+  margin: 14px 0 0;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-number {
+  display: block;
+  margin: 24px 0 0;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-custom-link:not(.qodef-iwt-custom-cursor) .qodef-iwt-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-custom-link:not(.qodef-iwt-custom-cursor) .qodef-iwt-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-lightbox .qodef-iwt-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-lightbox .qodef-iwt-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image {
+  cursor: pointer;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image {
+  cursor: pointer;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder:hover {
+  opacity: 1;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a span {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+  font-size: 19.85px;
+  text-transform: capitalize;
+  color: #fff;
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a span:before, .qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a span:before {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a span:after {
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a:first-child span {
+  right: 20px;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a:last-child span {
+  left: 20px;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a:hover span {
+  color: #e84945;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a:hover span:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  -o-transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s, -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image .qodef-iwt-links-holder-inner a:hover span:after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-links-over-image.qodef-iwt-custom-cursor .qodef-iwt-image:hover {
+  cursor: none;
+}
+
+#qodef-iwt-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  visibility: hidden;
+  text-align: center;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  mix-blend-mode: difference;
+  stroke: #fff;
+}
+
+.touch #qodef-iwt-cursor {
+  display: none;
+}
+
+#qodef-iwt-cursor.-show {
+  visibility: visible;
+}
+
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Intro Section shortcode style - begin
+   ========================================================================== */
+#qodef-is-height {
+  height: 55vh;
+}
+
+#qodef-intro-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.touch #qodef-intro-section {
+  position: fixed;
+}
+
+.touch #qodef-intro-section.-qodef-last {
+  position: absolute;
+}
+
+#qodef-is-1 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#qodef-is-1 .qodef-is-loading-bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #181818;
+  z-index: -1;
+}
+
+#qodef-is-1 .qodef-is-loading-center {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#qodef-is-1 .qodef-is-loading-label .qodef-s-character {
+  font-size: 15.5vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #525252;
+  line-height: 1.2;
+  display: inline-block;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-is-1 .qodef-is-loading-label .qodef-s-character {
+    font-size: 22vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-is-1 .qodef-is-loading-label .qodef-s-character {
+    display: none;
+  }
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(1) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(2) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(3) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(4) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(5) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(6) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(7) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(8) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-label .qodef-s-character:nth-child(9) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+}
+
+#qodef-is-1 .qodef-is-loading-title {
+  position: absolute;
+  font-size: 75px;
+  letter-spacing: 0;
+  color: #e84945;
+  line-height: 1;
+  margin: 2.5vh 0 0;
+  z-index: 20;
+  opacity: 0;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-title {
+  opacity: 1;
+  -webkit-transition: opacity .3s .3s;
+  -o-transition: opacity .3s .3s;
+  transition: opacity .3s .3s;
+}
+
+#qodef-is-1 .qodef-is-loading-progress {
+  position: absolute;
+  top: 0;
+  right: -30%;
+  font-size: 25px;
+}
+
+#qodef-is-1 .qodef-is-loading-pattern {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#qodef-is-1 .qodef-is-loading-subtitle {
+  text-align: center;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  opacity: 0;
+  -webkit-transform: skewY(15deg) scaleY(1.2);
+  -ms-transform: skewY(15deg) scaleY(1.2);
+  transform: skewY(15deg) scaleY(1.2);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+#qodef-is-1 .qodef-is-loading-tagline {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  opacity: 0;
+  -webkit-transform: skewY(15deg) scaleY(1.2);
+  -ms-transform: skewY(15deg) scaleY(1.2);
+  transform: skewY(15deg) scaleY(1.2);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+#qodef-is-1 .qodef-is-loading-bottom {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-bottom {
+  visibility: visible;
+}
+
+.q-show #qodef-is-1 .qodef-is-loading-bottom .qodef-is-loading-subtitle,
+.q-show #qodef-is-1 .qodef-is-loading-bottom .qodef-is-loading-tagline {
+  opacity: 1;
+  -webkit-transform: skewY(0deg) scaleY(1);
+  -ms-transform: skewY(0deg) scaleY(1);
+  transform: skewY(0deg) scaleY(1);
+}
+
+#qodef-is-1 .qodef-is-loading-subtitle {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0;
+}
+
+#qodef-is-1 .qodef-is-loading-tagline {
+  margin: 10px auto 60px;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#qodef-is-cover {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 100;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+#qodef-is-video {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 30;
+  -webkit-transform: translate3d(0, 50%, 0) scale(1.1);
+  transform: translate3d(0, 50%, 0) scale(1.1);
+  visibility: hidden;
+}
+
+#qodef-is-first-title {
+  position: absolute;
+  padding-left: 4.6vw;
+  margin-top: -7.5%;
+  z-index: 1000;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-is-first-title {
+    padding: 0 10vw;
+  }
+}
+
+#qodef-is-first-title h1 {
+  font-size: 7.8vw;
+  color: #e84945;
+  letter-spacing: 0;
+  line-height: 1.05em;
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-is-first-title h1 {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-is-first-title h1 {
+    font-size: 50px;
+  }
+}
+
+#qodef-is-first-title .qodef-st-title-emphasize {
+  position: relative;
+}
+
+#qodef-is-first-title .qodef-st-title-emphasize:after {
+  content: '';
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  width: 75%;
+  height: 5%;
+  background-color: currentColor;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.-qodef-f-1 #qodef-is-first-title .qodef-st-title-emphasize:after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#qodef-is-arrow {
+  position: absolute;
+  bottom: 6vw;
+  left: calc(50% - 5.7vw);
+  z-index: 100;
+  width: 11.4vw;
+  cursor: pointer;
+}
+
+#qodef-is-arrow polygon {
+  stroke: #fff;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.-qodef-f-1 #qodef-is-arrow polygon {
+  -webkit-transition: stroke-dashoffset 2.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: stroke-dashoffset 2.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: stroke-dashoffset 2.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  stroke-dashoffset: 0;
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-is-arrow {
+    left: calc(50% - 45px);
+    width: 90px;
+  }
+}
+
+.-qodef-f-2 #qodef-is-arrow {
+  pointer-events: none;
+}
+
+#qodef-is-second-title {
+  position: absolute;
+  padding-left: 4.6vw;
+  top: 90%;
+  z-index: 1000;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, -30%, 0);
+  transform: translate3d(0, -30%, 0);
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-is-second-title {
+    padding: 0 10vw;
+  }
+}
+
+#qodef-is-second-title h1 {
+  font-size: 6.25vw;
+  color: #e84945;
+  letter-spacing: 0;
+  line-height: 1.083em;
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-is-second-title h1 {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-is-second-title h1 {
+    font-size: 50px;
+  }
+}
+
+#qodef-is-second-title .qodef-st-title-emphasize {
+  position: relative;
+}
+
+#qodef-is-second-title .qodef-st-title-emphasize:after {
+  content: '';
+  position: absolute;
+  left: 2%;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: currentColor;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
+.-qodef-f-2 #qodef-is-second-title .qodef-st-title-emphasize:after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#qodef-is-link {
+  position: absolute;
+  top: calc(45vh + 20px);
+  right: 60px;
+  z-index: 200;
+  opacity: 0;
+}
+
+#qodef-is-link .qodef-btn {
+  color: #fff;
+}
+
+.-qodef-f-2 #qodef-is-link {
+  opacity: 1;
+  -webkit-transition: opacity .4s .2s;
+  -o-transition: opacity .4s .2s;
+  transition: opacity .4s .2s;
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-is-link {
+    top: 45vh;
+  }
+}
+
+/* elementor fix */
+.elementor-widget-qodef_intro_section #qodef-intro-section {
+  min-height: 100vh;
+}
+
+.elementor-widget-qodef_intro_section #qodef-is-first-title,
+.elementor-widget-qodef_intro_section #qodef-is-second-title {
+  padding-left: 3.8vw;
+}
+
+/* ==========================================================================
+   Intro Section shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Item Showcase shortcode style - begin
+   ========================================================================== */
+.qodef-item-showcase-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  opacity: 0;
+}
+
+.qodef-item-showcase-holder .qodef-is-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  width: 40%;
+  margin-top: -100px;
+  opacity: 0;
+  -webkit-transform: translateY(70px);
+  -ms-transform: translateY(70px);
+  transform: translateY(70px);
+}
+
+.qodef-item-showcase-holder .qodef-is-image.qodef-appeared {
+  -webkit-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-item-showcase-holder .qodef-is-item-holder {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+}
+
+.qodef-item-showcase-holder .qodef-is-item-holder.qodef-is-left-holder {
+  float: left;
+}
+
+.qodef-item-showcase-holder .qodef-is-item-holder.qodef-is-right-holder {
+  float: right;
+}
+
+.qodef-item-showcase-holder .qodef-is-item-holder .qodef-is-item:first-child {
+  margin: 0;
+}
+
+.qodef-item-showcase-holder .qodef-is-item {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 56px 0 0;
+  opacity: 0;
+}
+
+.qodef-item-showcase-holder .qodef-is-item.qodef-is-left {
+  text-align: right;
+  -webkit-transform: translateX(-70px);
+  -ms-transform: translateX(-70px);
+  transform: translateX(-70px);
+}
+
+.qodef-item-showcase-holder .qodef-is-item.qodef-is-left .qodef-is-content {
+  padding: 0 20px 0 0;
+}
+
+.qodef-item-showcase-holder .qodef-is-item.qodef-is-right {
+  text-align: left;
+  -webkit-transform: translateX(70px);
+  -ms-transform: translateX(70px);
+  transform: translateX(70px);
+}
+
+.qodef-item-showcase-holder .qodef-is-item.qodef-is-right .qodef-is-content {
+  padding: 0 0 0 20px;
+}
+
+.qodef-item-showcase-holder .qodef-is-item.qodef-appeared {
+  -webkit-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.qodef-item-showcase-holder .qodef-is-item .qodef-is-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-item-showcase-holder .qodef-is-item .qodef-is-title {
+  margin: 0;
+}
+
+.qodef-item-showcase-holder .qodef-is-item .qodef-is-text {
+  margin: 14px 0 0;
+}
+
+/* ==========================================================================
+   Item Showcase shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Outline Text shortcode style - begin
+   ========================================================================== */
+.qodef-outline-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.qodef-outline-text-holder.qodef-ot-vertical.qodef-ot-position-right {
+  -webkit-transform: rotate(-90deg) translateY(100%);
+  -ms-transform: rotate(-90deg) translateY(100%);
+  transform: rotate(-90deg) translateY(100%);
+}
+
+.qodef-outline-text-holder.qodef-ot-vertical.qodef-ot-position-right .qodef-outline-text {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.qodef-outline-text-holder.qodef-ot-vertical.qodef-ot-position-left {
+  -webkit-transform: rotate(-90deg) translateY(-100%);
+  -ms-transform: rotate(-90deg) translateY(-100%);
+  transform: rotate(-90deg) translateY(-100%);
+}
+
+.qodef-outline-text-holder.qodef-ot-vertical.qodef-ot-position-left .qodef-outline-text {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.qodef-outline-text-holder .qodef-outline-text {
+  margin: 0;
+  font-family: inherit;
+  font-size: 240px;
+  line-height: 0.8em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: transparent;
+  -webkit-text-stroke: 3px #e84945;
+  text-stroke: 3px #e84945;
+}
+
+/* ==========================================================================
+   Outline Text shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Outro Section shortcode style - begin
+   ========================================================================== */
+#qodef-outro-section {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.no-touch #qodef-outro-section a {
+  cursor: none;
+}
+
+#qodef-os-main {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#qodef-os-main .qodef-abs-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#qodef-os-main .qodef-os-bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #181818;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#qodef-os-main .qodef-os-center {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#qodef-os-main .qodef-os-label .qodef-s-character {
+  font-size: 15.5vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #525252;
+  line-height: 1.2;
+  display: inline-block;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  #qodef-os-main .qodef-os-label .qodef-s-character {
+    font-size: 22vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-os-main .qodef-os-label .qodef-s-character {
+    display: none;
+  }
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(1) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.3s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(2) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.4s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(3) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.5s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(4) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.6s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(5) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.7s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(6) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.8s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(7) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s, opacity 1s cubic-bezier(0, 0, 0, 1) 0.9s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(8) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.q-show #qodef-os-main .qodef-os-label .qodef-s-character:nth-child(9) {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s;
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s, opacity 1s cubic-bezier(0, 0, 0, 1) 1.1s, -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+}
+
+#qodef-os-main .qodef-os-title {
+  position: absolute;
+  font-size: 75px;
+  letter-spacing: 0;
+  color: #e84945;
+  line-height: 1;
+  margin: 2.5vh 0 0;
+  z-index: 20;
+  opacity: 0;
+}
+
+.q-show #qodef-os-main .qodef-os-title {
+  opacity: 1;
+  -webkit-transition: opacity .3s .3s;
+  -o-transition: opacity .3s .3s;
+  transition: opacity .3s .3s;
+}
+
+#qodef-os-main .qodef-os-pattern {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 120%;
+  left: -10%;
+}
+
+#qodef-os-main .qodef-os-subtitle {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  opacity: 0;
+  -webkit-transform: skewY(15deg) scaleY(1.2);
+  -ms-transform: skewY(15deg) scaleY(1.2);
+  transform: skewY(15deg) scaleY(1.2);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.5s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0;
+  text-align: center;
+}
+
+#qodef-os-main .qodef-os-tagline {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  opacity: 0;
+  -webkit-transform: skewY(15deg) scaleY(1.2);
+  -ms-transform: skewY(15deg) scaleY(1.2);
+  transform: skewY(15deg) scaleY(1.2);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  -o-transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s;
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s, opacity 0.4s cubic-bezier(0.33, 0.02, 0, 0.93) 0.6s, -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  margin: 10px auto 60px;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#qodef-os-main .qodef-os-bottom {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.q-show #qodef-os-main .qodef-os-bottom {
+  visibility: visible;
+}
+
+.q-show #qodef-os-main .qodef-os-bottom .qodef-os-subtitle,
+.q-show #qodef-os-main .qodef-os-bottom .qodef-os-tagline {
+  opacity: 1;
+  -webkit-transform: skewY(0deg) scaleY(1);
+  -ms-transform: skewY(0deg) scaleY(1);
+  transform: skewY(0deg) scaleY(1);
+}
+
+#qodef-os-link {
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: opacity 0.65s cubic-bezier(0.33, 0.02, 0, 0.93) 1s;
+  -o-transition: opacity 0.65s cubic-bezier(0.33, 0.02, 0, 0.93) 1s;
+  transition: opacity 0.65s cubic-bezier(0.33, 0.02, 0, 0.93) 1s;
+}
+
+#qodef-os-link .qodef-btn {
+  font-size: 75px;
+  color: #e84945;
+  letter-spacing: 0;
+  line-height: 1.05em;
+}
+
+#qodef-os-link .qodef-btn-text:before, #qodef-os-link .qodef-btn-text:after {
+  height: 5px;
+}
+
+@media only screen and (max-width: 680px) {
+  #qodef-os-link .qodef-btn {
+    font-size: 50px;
+  }
+}
+
+.q-show #qodef-os-link {
+  opacity: 1;
+}
+
+#qodef-os-arrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  visibility: hidden;
+  text-align: center;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  mix-blend-mode: difference;
+  stroke: #fff;
+}
+
+.touch #qodef-os-arrow {
+  display: none;
+}
+
+#qodef-os-arrow.-show {
+  visibility: visible;
+}
+
+/* elementor fix */
+.elementor-widget-qodef_outro_section #qodef-outro-section {
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Outro Section shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Pie Chart shortcode style - begin
+   ========================================================================== */
+.qodef-pie-chart-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in;
+  -o-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage {
+  position: relative;
+  display: block;
+  height: 176px;
+  width: 176px;
+  line-height: 176px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage .qodef-pc-percent {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+  font-size: 40px;
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage .qodef-pc-percent:after {
+  content: '%';
+  font-size: inherit;
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  margin: 18px 0 0;
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder .qodef-pc-title {
+  margin: 0;
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder .qodef-pc-text {
+  margin: 8px 0 0;
+}
+
+.qodef-pie-chart-holder .qodef-pie-chart-svg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-pie-chart-holder .qodef-pie-chart-svg path {
+  fill: #c7c7c7;
+}
+
+/* ==========================================================================
+   Pie Chart shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Pricing Tables shortcode style - begin
+   ========================================================================== */
+.qodef-pricing-tables {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-price-table .qodef-pattern-holder .qodef-pt-price {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+.qodef-price-table .qodef-pattern-holder .qodef-pt-value {
+  opacity: 0;
+}
+
+.-show .qodef-price-table .qodef-pattern-holder .qodef-pt-price {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.-show .qodef-price-table .qodef-pattern-holder .qodef-pt-value {
+  opacity: 1;
+}
+
+.qodef-price-table:nth-child(1) .qodef-pt-price {
+  -webkit-transition-delay: 0s !important;
+  -o-transition-delay: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.qodef-price-table:nth-child(2) .qodef-pt-price {
+  -webkit-transition-delay: 0.2s !important;
+  -o-transition-delay: 0.2s !important;
+  transition-delay: 0.2s !important;
+}
+
+.qodef-price-table:nth-child(3) .qodef-pt-price {
+  -webkit-transition-delay: 0.4s !important;
+  -o-transition-delay: 0.4s !important;
+  transition-delay: 0.4s !important;
+}
+
+.qodef-price-table:nth-child(4) .qodef-pt-price {
+  -webkit-transition-delay: 0.6s !important;
+  -o-transition-delay: 0.6s !important;
+  transition-delay: 0.6s !important;
+}
+
+.qodef-price-table:nth-child(5) .qodef-pt-price {
+  -webkit-transition-delay: 0.8s !important;
+  -o-transition-delay: 0.8s !important;
+  transition-delay: 0.8s !important;
+}
+
+.qodef-price-table:nth-child(1) .qodef-pt-value {
+  -webkit-transition: opacity 0.6s 0.3s;
+  -o-transition: opacity 0.6s 0.3s;
+  transition: opacity 0.6s 0.3s;
+}
+
+.qodef-price-table:nth-child(2) .qodef-pt-value {
+  -webkit-transition: opacity 0.6s 0.6s;
+  -o-transition: opacity 0.6s 0.6s;
+  transition: opacity 0.6s 0.6s;
+}
+
+.qodef-price-table:nth-child(3) .qodef-pt-value {
+  -webkit-transition: opacity 0.6s 0.9s;
+  -o-transition: opacity 0.6s 0.9s;
+  transition: opacity 0.6s 0.9s;
+}
+
+.qodef-price-table:nth-child(4) .qodef-pt-value {
+  -webkit-transition: opacity 0.6s 1.2s;
+  -o-transition: opacity 0.6s 1.2s;
+  transition: opacity 0.6s 1.2s;
+}
+
+.qodef-price-table:nth-child(5) .qodef-pt-value {
+  -webkit-transition: opacity 0.6s 1.5s;
+  -o-transition: opacity 0.6s 1.5s;
+  transition: opacity 0.6s 1.5s;
+}
+
+.qodef-price-table .qodef-pt-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl,
+.qodef-price-table .qodef-pt-inner .qodef-pt-cr {
+  display: block;
+  float: left;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl {
+  width: 50%;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl .qodef-pt-prices {
+  position: relative;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl .qodef-pt-prices .qodef-pt-value {
+  position: relative;
+  vertical-align: super;
+  bottom: 2px;
+  font-size: 60px;
+  line-height: 1em;
+  font-weight: 900;
+  color: #f3a4a2;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl .qodef-pt-prices .qodef-pt-price {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #f3a4a2;
+  line-height: 1em;
+  font-weight: 900;
+  font-size: 127.44px;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cl .qodef-pt-prices .qodef-pt-mark {
+  position: absolute;
+  display: block;
+  margin: 1px 0 0;
+}
+
+.qodef-price-table .qodef-pt-inner .qodef-pt-cr {
+  width: 50%;
+}
+
+.qodef-price-table .qodef-pt-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-price-table .qodef-pt-inner ul li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-title-holder {
+  position: relative;
+  color: #000;
+  font-size: 17px;
+  line-height: 1em;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-title-holder .qodef-pt-title {
+  display: block;
+  padding: 17px 0 7px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-description-holder {
+  position: relative;
+  color: #000;
+  font-size: 26px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-price-table .qodef-pt-inner ul li.qodef-pt-description-holder {
+    line-height: 1.2em;
+  }
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-description-holder .qodef-pt-description {
+  display: block;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-content {
+  padding: 15px 0;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-content ul {
+  padding-top: 11px;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-content ul li {
+  padding: 5px 0 4px;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-button {
+  padding: 25px 0 0;
+}
+
+/* ==========================================================================
+   Pricing Tables shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Progress Bar shortcode style - begin
+   ========================================================================== */
+.qodef-progress-bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-progress-bar.qodef-pb-percent-floating {
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-progress-bar.qodef-pb-percent-floating .qodef-pb-percent {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-progress-bar .qodef-pb-title-holder {
+  position: relative;
+  margin: 10px 0 4px;
+}
+
+.qodef-progress-bar .qodef-pb-title-holder .qodef-pb-title {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+.qodef-progress-bar .qodef-pb-percent {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0;
+  z-index: 10;
+}
+
+.qodef-progress-bar .qodef-pb-percent:after {
+  content: '%';
+}
+
+.qodef-progress-bar .qodef-pb-content-holder {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+}
+
+.qodef-progress-bar .qodef-pb-content-holder .qodef-pb-content {
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: #e84945;
+}
+
+.qodef-progress-bar .qodef-pb-static-content {
+  margin-top: 5px;
+  width: 100%;
+  height: 1px;
+  background-color: #989898;
+  opacity: .3;
+}
+
+/* ==========================================================================
+   Progress Bar shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+.qodef-section-title-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-section-title-holder .qodef-st-title {
+  margin: 0;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize > span {
+  display: block;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize > span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #e84945;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize.-show > span {
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize.-show > span:first-child {
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize.-show > span:last-child {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize:nth-of-type(0) > span {
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize:nth-of-type(1) > span {
+  -webkit-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize:nth-of-type(2) > span {
+  -webkit-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize:nth-of-type(3) > span {
+  -webkit-transition-delay: 0.75s;
+  -o-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+
+.qodef-section-title-holder .qodef-st-title .qodef-st-title-emphasize:nth-of-type(4) > span {
+  -webkit-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.qodef-section-title-holder .qodef-st-text {
+  display: block;
+  margin: 30px 0 0;
+}
+
+.qodef-section-title-holder .qodef-st-button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-section-title-holder .qodef-st-button .qodef-btn {
+  margin-top: 42px;
+}
+
+.qodef-section-title-holder.qodef-st-standard .qodef-st-text {
+  margin: 8px 0 0;
+  font-size: 17px;
+  color: #000;
+}
+
+.qodef-section-title-holder.qodef-st-standard .qodef-st-text:before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background-color: currentColor;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+.qodef-section-title-holder.qodef-st-underlined .qodef-st-title:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Separator shortcode style - begin
+   ========================================================================== */
+.qodef-separator-holder {
+  position: relative;
+  height: auto;
+  font-size: 0;
+  line-height: 1em;
+}
+
+.qodef-separator-holder.qodef-separator-center {
+  text-align: center;
+}
+
+.qodef-separator-holder.qodef-separator-left {
+  text-align: left;
+}
+
+.qodef-separator-holder.qodef-separator-right {
+  text-align: right;
+}
+
+.qodef-separator-holder.qodef-separator-full-width .qodef-separator {
+  width: 100% !important;
+}
+
+.qodef-separator {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 1px solid #ebebeb;
+  margin: 10px 0;
+}
+
+/* ==========================================================================
+   Separator shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Single Image shortcode style - begin
+   ========================================================================== */
+.qodef-single-image-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+  /***** Moving Behavior Style - begin *****/
+  /***** Moving Behavior Style - end *****/
+}
+
+.qodef-single-image-holder .qodef-pattern-overlay {
+  top: 0%;
+  height: 120%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.qodef-single-image-holder.qodef-has-shadow .qodef-si-inner {
+  -webkit-box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.85px 0.15px rgba(0, 0, 0, 0.09);
+}
+
+.qodef-single-image-holder .qodef-si-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-single-image-holder .qodef-si-inner a, .qodef-single-image-holder .qodef-si-inner img {
+  position: relative;
+  display: block;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-custom-link .qodef-si-inner a:hover:after {
+  opacity: 1;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-custom-link .qodef-si-inner a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-lightbox .qodef-si-inner a:hover:after {
+  opacity: 1;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-lightbox .qodef-si-inner a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner {
+  overflow: hidden;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner {
+  overflow: hidden;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+  overflow: hidden;
+  padding: 10% 0;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 120%;
+  -webkit-transition: background .7s ease-out;
+  -o-transition: background .7s ease-out;
+  transition: background .7s ease-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner:hover {
+  background-position: 90% center;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner img {
+  z-index: -1;
+  max-width: 80%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+    padding: 0;
+    background: none;
+  }
+  .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner img {
+    z-index: inherit;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Single Image shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Social Share shortcode style - begin
+   ========================================================================== */
+.qodef-social-share-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-social-share-holder .qodef-social-title {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 13px;
+}
+
+.qodef-social-share-holder ul {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-social-share-holder li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-social-share-holder li a {
+  font-size: 14px;
+}
+
+.qodef-social-share-holder.qodef-list li {
+  margin-right: 28px;
+}
+
+.qodef-social-share-holder.qodef-list li:last-child {
+  margin-right: 0;
+}
+
+.qodef-social-share-holder.qodef-text li {
+  margin-right: 13px;
+}
+
+.qodef-social-share-holder.qodef-text li:last-child {
+  margin-right: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  /* opacity and visibility need to be different, but not background-color */
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(6) {
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(7) {
+  -webkit-transition-delay: 0.7s;
+  -o-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown-opener {
+  display: block;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown-opener .qodef-social-share-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown {
+  position: absolute;
+  visibility: hidden;
+  z-index: 950;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown ul {
+  position: relative;
+  display: block;
+  z-index: 990;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li {
+  position: absolute;
+  display: block;
+  text-align: center;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: opacity .2s ease-out, visibility .2s ease-out;
+  -o-transition: opacity .2s ease-out, visibility .2s ease-out;
+  transition: opacity .2s ease-out, visibility .2s ease-out;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li a {
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out;
+  -o-transition: color .2s ease-out, background-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li * {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown {
+  bottom: 0;
+  left: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #bfbfbf;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:not(:first-child) {
+  border-top: none;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-facebook-share a:hover {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-twitter-share a:hover {
+  background-color: #00aced;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-linkedin-share a:hover {
+  background-color: #007bb5;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-tumblr-share a:hover {
+  background-color: #32506d;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-pinterest-share a:hover {
+  background-color: #cb2027;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-vk-share a:hover {
+  background-color: #45668e;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li a {
+  font-size: 12px;
+  color: #464646;
+  background-color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(1) {
+  bottom: -30px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(2) {
+  bottom: -60px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(3) {
+  bottom: -90px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(4) {
+  bottom: -120px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(5) {
+  bottom: -150px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(6) {
+  bottom: -180px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(7) {
+  bottom: -210px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown {
+  top: 0;
+  right: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li {
+  width: calc(90px / 3);
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(1) {
+  left: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(2) {
+  left: 35px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(3) {
+  left: 65px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(4) {
+  left: 95px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(5) {
+  left: 125px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(6) {
+  left: 155px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(7) {
+  left: 185px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown {
+  top: 0;
+  left: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li {
+  width: calc(90px / 3);
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(1) {
+  right: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(2) {
+  right: 35px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(3) {
+  right: 65px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(4) {
+  right: 95px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(5) {
+  right: 125px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(6) {
+  right: 155px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(7) {
+  right: 185px;
+}
+
+/* ==========================================================================
+   Social Share shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Tabs shortcode style - begin
+   ========================================================================== */
+.qodef-tabs {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-tabs .qodef-tabs-nav {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qodef-tabs .qodef-tabs-nav li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-tabs .qodef-tabs-nav li a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  -o-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+.qodef-tabs .qodef-tab-container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-tabs .qodef-tab-container p {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li a {
+  padding: 7px 26px;
+  font-size: 11px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #000;
+  background-color: #f6f6f6;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li.ui-state-hover a {
+  color: #fff;
+  background-color: #e84945;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tab-container {
+  margin: 25px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li {
+  margin: 0 12px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li a {
+  padding: 7px 26px;
+  font-size: 11px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #000;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li.ui-state-hover a {
+  color: #fff;
+  background-color: #e84945;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tab-container {
+  margin: 25px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li {
+  margin: 0 31px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li a {
+  padding: 13px 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #999;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li.ui-state-hover a {
+  color: #000;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tab-container {
+  padding: 31px 0;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.qodef-tabs.qodef-tabs-vertical {
+  display: table;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav {
+  display: table-cell;
+  vertical-align: top;
+  width: 140px;
+  height: 100%;
+  border-right: 1px solid #bfbfbf;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li {
+  display: block;
+  float: none;
+  margin: 0 0 24px;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li a {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #999;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li.ui-state-hover a {
+  color: #000;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tab-container {
+  display: table-cell;
+  vertical-align: top;
+  width: calc(100% - 140px);
+  height: 100%;
+  padding: 0 0 0 45px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-widget-content {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-widget-header {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: initial;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-tabs-nav li {
+  position: initial;
+  font-weight: inherit;
+  color: inherit;
+  background: initial;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-widget-content {
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   Tabs shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+# Team carousel - begin
+	========================================================================== */
+@media only screen and (max-width: 680px) {
+  .qodef-team-carousel-holder .qodef-owl-slider .owl-nav {
+    display: none;
+  }
+}
+
+.qodef-team-carousel-holder .qodef-owl-slider .owl-nav .owl-prev {
+  left: -50px;
+}
+
+.qodef-team-carousel-holder .qodef-owl-slider .owl-nav .owl-next {
+  right: -50px;
+}
+
+/* ==========================================================================
+# Team carousel - end
+	========================================================================== */
+/* ==========================================================================
+   Team shortcode style - begin
+   ========================================================================== */
+.qodef-team-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-team-holder.qodef-team-info-on-image {
+  overflow: hidden;
+}
+
+.touch .qodef-team-holder.qodef-team-info-on-image {
+  cursor: pointer;
+}
+
+.qodef-team-holder.qodef-team-info-on-image .qodef-team-image {
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+.qodef-team-holder.qodef-team-info-on-image .qodef-team-image img {
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  transform: scale(1.01);
+  will-change: transform;
+}
+
+.qodef-team-holder.qodef-team-info-on-image:hover .qodef-pattern-overlay {
+  opacity: 0;
+  -webkit-transform: scaleY(2);
+  -ms-transform: scaleY(2);
+  transform: scaleY(2);
+}
+
+.qodef-team-holder.qodef-team-info-on-image:hover .qodef-team-image {
+  -webkit-transform: translate3d(1%, -1%, 0);
+  transform: translate3d(1%, -1%, 0);
+  -webkit-transition-delay: .15s;
+  -o-transition-delay: .15s;
+  transition-delay: .15s;
+}
+
+.qodef-team-holder.qodef-team-info-on-image:hover .qodef-team-image img {
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
+}
+
+.qodef-team-holder.qodef-team-info-on-image .qodef-team-social-holder {
+  margin: 7px 0 0;
+  position: static;
+}
+
+.qodef-team-holder.qodef-team-info-on-image .qodef-team-social-inner {
+  visibility: hidden;
+}
+
+.qodef-team-holder .qodef-team-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-team-holder .qodef-team-image img {
+  display: block;
+}
+
+.qodef-team-holder .qodef-team-image .qodef-pattern-overlay {
+  -webkit-transition: opacity 0.6s, -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.6s, -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s, -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.qodef-team-holder .qodef-team-info {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 26px 0 0;
+}
+
+.qodef-team-holder .qodef-team-name {
+  margin: 0;
+}
+
+.qodef-team-holder .qodef-team-position {
+  margin: 6px 0 0;
+}
+
+.qodef-team-holder .qodef-team-text {
+  margin: 10px 0 0;
+}
+
+.qodef-team-holder .qodef-team-social-wrapper {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.qodef-team-holder .qodef-team-social-outer {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-team-holder .qodef-team-social-inner {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  padding: 20px 40px 33px;
+  vertical-align: bottom;
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  -o-transition: transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.qodef-team-holder .qodef-team-social-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 17px 0 0;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-icon {
+  font-size: 14px;
+  margin: 0 12px 0 0;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-icon .qodef-icon-element {
+  font-size: inherit;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.qodef-team-holder .qodef-team-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-team-follow-info-holder {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+.touch .qodef-team-follow-info-holder {
+  display: none;
+}
+
+.qodef-team-follow-info-holder.qodef-is-active {
+  opacity: 1;
+}
+
+.qodef-team-follow-info-holder .qodef-team-follow-info-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin: 5px 0 0;
+  color: #000;
+}
+
+.qodef-team-follow-info-holder .qodef-team-follow-info-name {
+  position: relative;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 26px;
+  line-height: 1.26em;
+  font-weight: 700;
+}
+
+.qodef-team-follow-info-holder .qodef-team-follow-info-position {
+  font-size: 17px;
+  line-height: 1em;
+}
+
+/* ==========================================================================
+   Team shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Text Marquee shortcode style - begin
+   ========================================================================== */
+.qodef-text-marquee {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  color: #000;
+  font-size: 60px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.qodef-text-marquee .qodef-marquee-element {
+  padding: 0 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Text Marquee shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Text With Number shortcode styles - begin
+   ========================================================================== */
+.qodef-text-with-number-holder.qodef-twn-with-separators {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px 40px;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-text-with-number-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-twn-inner {
+  position: relative;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-twn-text-holder {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-twn-text-holder .qodef-twn-title {
+  margin: 0;
+  text-align: center;
+  color: #e84945;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-twn-separator {
+  width: 100px;
+  height: 2px;
+  background-color: #e84945;
+}
+
+.qodef-text-with-number-holder.qodef-twn-with-separators .qodef-twn-number-holder span {
+  display: block;
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 1em;
+  color: #f3a4a2;
+}
+
+.qodef-text-with-number-holder.qodef-twn-number-above-text .qodef-twn-number-holder {
+  border-bottom: 2px solid #000;
+}
+
+.qodef-text-with-number-holder.qodef-twn-number-above-text .qodef-twn-number-holder span {
+  display: block;
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 1em;
+  letter-spacing: -0.04em;
+  color: #f3a4a2;
+}
+
+.qodef-text-with-number-holder.qodef-twn-number-above-text .qodef-twn-number-holder .qodef-twn-title {
+  margin: 16px 0 9px;
+}
+
+.qodef-text-with-number-holder.qodef-twn-number-above-text .qodef-twn-title {
+  padding: 15px 0 10px;
+}
+
+.qodef-text-with-number-holder .qodef-pattern-holder .qodef-num {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+.qodef-text-with-number-holder .qodef-text-with-number-item:nth-child(1) .qodef-num {
+  -webkit-transition-delay: 0s !important;
+  -o-transition-delay: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.qodef-text-with-number-holder .qodef-text-with-number-item:nth-child(2) .qodef-num {
+  -webkit-transition-delay: 0.2s !important;
+  -o-transition-delay: 0.2s !important;
+  transition-delay: 0.2s !important;
+}
+
+.qodef-text-with-number-holder .qodef-text-with-number-item:nth-child(3) .qodef-num {
+  -webkit-transition-delay: 0.4s !important;
+  -o-transition-delay: 0.4s !important;
+  transition-delay: 0.4s !important;
+}
+
+.qodef-text-with-number-holder .qodef-text-with-number-item:nth-child(4) .qodef-num {
+  -webkit-transition-delay: 0.6s !important;
+  -o-transition-delay: 0.6s !important;
+  transition-delay: 0.6s !important;
+}
+
+.qodef-text-with-number-holder .qodef-text-with-number-item:nth-child(5) .qodef-num {
+  -webkit-transition-delay: 0.8s !important;
+  -o-transition-delay: 0.8s !important;
+  transition-delay: 0.8s !important;
+}
+
+.qodef-text-with-number-holder.-show .qodef-num {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0, 0, 0, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ==========================================================================
+   Text With Number shortcode styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Underline Text shortcode styles - begin
+   ========================================================================== */
+.qodef-underline-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin: 0;
+}
+
+.qodef-underline-text-holder .qodef-ut-underline {
+  border-bottom: 2px solid #e84945;
+}
+
+/* ==========================================================================
+   Underline Text shortcode styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Vertical Showcase style - begin
+   ========================================================================== */
+.qodef-vertical-showcase {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.qodef-vertical-showcase.qodef-vs-ready-animation .qodef-vs-frame-holder {
+  -webkit-transform: translate(-50%, 20%);
+  -ms-transform: translate(-50%, 20%);
+  transform: translate(-50%, 20%);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase.qodef-vs-ready-animation .qodef-vs-stripe {
+  top: 0 !important;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.qodef-vertical-showcase.qodef-vs-no-frame .qodef-vs-frame-mobile-holder img {
+  opacity: 0;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide.q-even .qodef-sc-clip-1,
+.qodef-vertical-showcase.qodef-vs-last-slide.q-even .qodef-sc-clip-2 {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-dotted-text {
+  opacity: 0 !important;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-stripe {
+  top: 0 !important;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-contact-form, .qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-social-widget {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1) 0.3s;
+  -o-transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1) 0.3s;
+  transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1) 0.3s;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-holder {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info {
+  z-index: -1;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-title, .qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-subtitle {
+  -webkit-transform: translateX(-750px);
+  -ms-transform: translateX(-750px);
+  transform: translateX(-750px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info .qodef-vs-frame-info-top .qodef-vs-frame-info-text-with-number {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info .qodef-vs-frame-info-top:after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.qodef-vertical-showcase.qodef-vs-last-slide .qodef-vs-frame-info .qodef-vs-frame-info-other {
+  -webkit-transform: translate(-50%, 380px);
+  -ms-transform: translate(-50%, 380px);
+  transform: translate(-50%, 380px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-stripe {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  width: 300%;
+  height: 200%;
+  background: #fb5252;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+  -o-transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+  transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+  will-change: transform;
+}
+
+.qodef-vertical-showcase .qodef-vs-holder {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #e73d3d;
+  overflow: hidden;
+}
+
+.qodef-vertical-showcase .qodef-vs-item-info {
+  display: none;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info {
+  position: absolute;
+  z-index: 1233;
+  -webkit-transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+  -o-transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+  transition: 1.2s 0.3s cubic-bezier(1, 0.12, 0.25, 1);
+}
+
+.touch .qodef-vertical-showcase .qodef-vs-frame-info {
+  pointer-events: none;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-animate-out .qodef-vs-frame-info-bottom .qodef-vs-frame-title, .qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-animate-out .qodef-vs-frame-info-bottom .qodef-vs-frame-subtitle {
+  -webkit-transform: translateX(-750px);
+  -ms-transform: translateX(-750px);
+  transform: translateX(-750px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-animate-out .qodef-vs-frame-info-top .qodef-vs-frame-info-text-with-number {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-animate-out .qodef-vs-frame-info-top:after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-animate-out .qodef-vs-frame-info-other {
+  -webkit-transform: translate(-50%, 300px);
+  -ms-transform: translate(-50%, 300px);
+  transform: translate(-50%, 300px);
+  opacity: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-even .qodef-vs-frame-info-bottom {
+  margin-top: 200px;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info.qodef-vs-frame-even .qodef-vs-frame-info-top {
+  margin-top: -395px;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-bottom {
+  position: absolute;
+  padding: 20px;
+  margin-top: 200px;
+  width: 360px;
+  z-index: 1234;
+  color: grey;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-title, .qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-subtitle {
+  -webkit-transform: translateX(-645px);
+  -ms-transform: translateX(-645px);
+  transform: translateX(-645px);
+  text-align: right;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-top {
+  position: absolute;
+  padding: 20px;
+  margin-top: -395px;
+  width: 360px;
+  z-index: 1234;
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-top .qodef-vs-frame-info-text-with-number {
+  -webkit-transform: translateX(245px);
+  -ms-transform: translateX(245px);
+  transform: translateX(245px);
+  opacity: 1;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-other {
+  position: absolute;
+  left: 50%;
+  padding: 20px;
+  margin-top: 110px;
+  -webkit-transform: translate(-50%, 270px);
+  -ms-transform: translate(-50%, 270px);
+  transform: translate(-50%, 270px);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 1234;
+  text-align: center;
+  color: #fff;
+  opacity: 1;
+  -webkit-transition: transform 0.6s 0.2s, opacity 0.2s 0.3s;
+  -webkit-transition: opacity 0.2s 0.3s, -webkit-transform 0.6s 0.2s;
+  transition: opacity 0.2s 0.3s, -webkit-transform 0.6s 0.2s;
+  -o-transition: transform 0.6s 0.2s, opacity 0.2s 0.3s;
+  transition: transform 0.6s 0.2s, opacity 0.2s 0.3s;
+  transition: transform 0.6s 0.2s, opacity 0.2s 0.3s, -webkit-transform 0.6s 0.2s;
+}
+
+.touch .qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-other {
+  pointer-events: auto;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-other a {
+  position: relative;
+  display: inline-block;
+  width: 178px;
+  height: 64px;
+  margin: 0 5px;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info .qodef-vs-frame-info-other a img {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-vs-dotted-text {
+  opacity: 1;
+  -webkit-transition: 0s .5s;
+  -o-transition: 0s .5s;
+  transition: 0s .5s;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-1,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-2 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-b-1,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-b-2,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-p-1,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-p-2,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-pattern-after,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-clip-1,
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-clip-2 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-1 {
+  z-index: 10;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-1 .qodef-vs-dotted-text {
+  color: #d53c3c;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-1 .qodef-b-1 {
+  background-color: #fa5151;
+  z-index: -1;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-2 .qodef-vs-dotted-text {
+  color: #fb5252;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-2 .qodef-b-2 {
+  background-color: #e73d3d;
+  z-index: -1;
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-clip-1 {
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text-holder .qodef-sc-clip-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.qodef-vertical-showcase.q-odd .qodef-sc-clip-1 {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-vertical-showcase.q-odd .qodef-sc-clip-2 {
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-info .qodef-vs-frame-info-top {
+  text-align: right;
+}
+
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-info .qodef-vs-frame-info-top .qodef-vs-frame-info-text-with-number {
+  -webkit-transform: translateX(-631px);
+  -ms-transform: translateX(-631px);
+  transform: translateX(-631px);
+}
+
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-subtitle,
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-info .qodef-vs-frame-info-bottom .qodef-vs-frame-title {
+  -webkit-transform: translateX(235px);
+  -ms-transform: translateX(235px);
+  transform: translateX(235px);
+  text-align: left;
+}
+
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-slide-text {
+  padding-left: 0;
+  padding-right: 52px;
+}
+
+.qodef-vertical-showcase.q-odd-visible .qodef-vs-frame-slide-text:before {
+  left: auto;
+  right: 0;
+}
+
+.qodef-vertical-showcase.q-even .qodef-sc-clip-1 {
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.qodef-vertical-showcase.q-even .qodef-sc-clip-2 {
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-info-top,
+.qodef-vertical-showcase .qodef-vs-frame-info-bottom {
+  opacity: 0;
+  -webkit-transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  transform: translateY(-60px);
+  -webkit-transition: transform 0.5s, opacity 0.2s;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.5s;
+  transition: opacity 0.2s, -webkit-transform 0.5s;
+  -o-transition: transform 0.5s, opacity 0.2s;
+  transition: transform 0.5s, opacity 0.2s;
+  transition: transform 0.5s, opacity 0.2s, -webkit-transform 0.5s;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.qodef-vertical-showcase.q-show .qodef-vs-frame-info-top {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: transform 0.5s 0.2s, opacity 0.2s 0.2s;
+  -webkit-transition: opacity 0.2s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.2s 0.2s, -webkit-transform 0.5s 0.2s;
+  -o-transition: transform 0.5s 0.2s, opacity 0.2s 0.2s;
+  transition: transform 0.5s 0.2s, opacity 0.2s 0.2s;
+  transition: transform 0.5s 0.2s, opacity 0.2s 0.2s, -webkit-transform 0.5s 0.2s;
+}
+
+.qodef-vertical-showcase.q-show .qodef-vs-frame-info-bottom {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-vertical-showcase .qodef-vs-dotted-text {
+  font-size: 26vw;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1em;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-slide-number {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1em;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-title-after-number {
+  display: inline-block;
+  margin: 0;
+  padding-left: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-slide-text {
+  display: block;
+  position: relative;
+  padding-left: 52px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-slide-text:before {
+  content: '';
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-subtitle {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  color: #fff;
+  margin: 0 0 12px;
+  position: relative;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-holder {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1234;
+  pointer-events: none;
+  -webkit-transition: 0.6s cubic-bezier(0.12, 0.12, 0.25, 1) 0.35s;
+  -o-transition: 0.6s cubic-bezier(0.12, 0.12, 0.25, 1) 0.35s;
+  transition: 0.6s cubic-bezier(0.12, 0.12, 0.25, 1) 0.35s;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-holder img {
+  z-index: 123;
+  position: relative;
+}
+
+.qodef-vertical-showcase .qodef-vs-frame-holder .qodef-vs-inner-frame {
+  width: 54.2%;
+  height: 70.9%;
+  margin: 16.2% 0 0 23.2%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -23;
+  -webkit-transition: background-image 1s cubic-bezier(0, 0, 0, 1);
+  -o-transition: background-image 1s cubic-bezier(0, 0, 0, 1);
+  transition: background-image 1s cubic-bezier(0, 0, 0, 1);
+}
+
+.qodef-vertical-showcase .swiper-container {
+  height: 100vh;
+  width: 100%;
+  z-index: 1222;
+}
+
+.qodef-vertical-showcase .swiper-container .swiper-wrapper {
+  -webkit-transition: 1s 0.5s !important;
+  -o-transition: 1s 0.5s !important;
+  transition: 1s 0.5s !important;
+}
+
+.qodef-vertical-showcase .swiper-container .swiper-slide:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qodef-vertical-showcase .swiper-container img {
+  height: 700px;
+  visibility: hidden;
+}
+
+.qodef-vertical-showcase .swiper-pagination {
+  right: 45px;
+  padding-top: 24px;
+  padding-left: 5px;
+  z-index: 99999;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet {
+  display: block;
+  position: relative;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 51px;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet:after {
+  content: '';
+  position: absolute;
+  left: -13px;
+  top: -13px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.35);
+  border-radius: 3em;
+  opacity: 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet:hover {
+  background-color: #fff;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet:hover:after {
+  opacity: 1;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet.bullet-clickable {
+  pointer-events: auto;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.qodef-vertical-showcase .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+  opacity: 1;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form {
+  width: 90%;
+  height: auto;
+  max-width: 865px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+  opacity: 0;
+  -webkit-transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1);
+  -o-transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1);
+  transition: 0.6s cubic-bezier(1, 0.12, 0.25, 1);
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .qodef-vs-contact-form-title, .qodef-vertical-showcase .qodef-vs-contact-form .qodef-vs-contact-form-subtitle {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .qodef-vs-contact-form-title h1 {
+  font-size: 288px;
+  letter-spacing: -0.04em;
+  color: #d53c3c;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .qodef-vs-contact-form-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .qodef-vs-contact-form-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 664px;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 .qodef-grid-col-6 {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input::-moz-placeholder {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 input::placeholder {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7 button.wpcf7-submit:after {
+  color: #fff;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .qodef-pattern-holder .qodef-pattern-after, .qodef-vertical-showcase .qodef-vs-contact-form .qodef-pattern-holder .qodef-pattern-before {
+  width: 101%;
+}
+
+.qodef-vertical-showcase .qodef-vs-contact-form .wpcf7-response-output {
+  position: relative;
+  z-index: 100;
+}
+
+.qodef-vertical-showcase .qodef-newsletter-custom-form {
+  padding-top: 40px;
+}
+
+.qodef-vertical-showcase .qodef-newsletter-custom-form button.wpcf7-submit.qodef-btn {
+  top: 53px;
+}
+
+/* ==========================================================================
+   Vertical Showcase style style - end
+   ========================================================================== */
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+.qodef-video-button-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play .qodef-video-button-play-inner,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image .qodef-video-button-play-inner {
+  position: relative;
+  top: 50%;
+  left: 0;
+  display: block;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+.qodef-video-button-holder .qodef-video-button-icon-border {
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 3em;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.qodef-video-button-holder .qodef-video-button-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-video-button-holder .qodef-video-button-image img {
+  display: block;
+  width: 100%;
+}
+
+.qodef-video-button-holder .qodef-video-button-play,
+.qodef-video-button-holder .qodef-video-button-play-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play {
+  color: #fff;
+  font-size: 80px;
+  line-height: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play span {
+  display: block;
+  line-height: inherit;
+  height: 275px;
+  width: 275px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qodef-video-button-holder .qodef-video-button-play span:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image.qodef-vb-has-hover-image:hover img:first-child {
+  opacity: 0;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image.qodef-vb-has-hover-image:hover img:nth-child(2) {
+  opacity: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img {
+  display: block;
+  margin: 0 auto;
+  -webkit-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img:first-child {
+  position: relative;
+  opacity: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateZ(0);
+  transform: translateX(-50%) translateZ(0);
+}
+
+.rev_slider_wrapper .qodef-video-button-holder .qodef-video-button-play-image img:nth-child(2) {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-video-button-holder span.qodef-video-button-icon-border {
+    width: 175px;
+    height: 175px;
+  }
+  .qodef-video-button-holder .qodef-video-button-play {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .qodef-video-button-holder span.qodef-video-button-icon-border {
+    width: 100px;
+    height: 100px;
+  }
+  .qodef-video-button-holder .qodef-video-button-play {
+    font-size: 28px;
+  }
+}
+
+.qodef-video-button-holder .qodef-moving {
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */
+.qodef-workflow {
+  margin-top: 50px;
+  position: relative;
+}
+
+.qodef-workflow .main-line {
+  background: #dee0e0;
+  left: 50%;
+  margin-left: -1px;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  height: 100%;
+  width: 2px;
+}
+
+.qodef-workflow .qodef-workflow-item {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  position: relative;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.qodef-workflow .qodef-workflow-item:nth-of-type(2n) {
+  text-align: left;
+}
+
+.qodef-workflow .qodef-workflow-item:nth-of-type(2n) .qodef-workflow-item-inner .qodef-workflow-image {
+  text-align: right;
+}
+
+.qodef-workflow .qodef-workflow-item:nth-of-type(2n+1) {
+  text-align: right;
+}
+
+.qodef-workflow .qodef-workflow-item:nth-of-type(2n+1) .qodef-workflow-item-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.qodef-workflow .qodef-workflow-item:nth-of-type(2n+1) .qodef-workflow-item-inner .qodef-workflow-image {
+  text-align: left;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-image,
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text {
+  float: left;
+  margin: 0;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-image {
+  padding: 0 60px;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text {
+  padding: 0 60px;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text p.text {
+  margin-top: 20px;
+}
+
+.qodef-workflow .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text .circle {
+  background: #fff;
+  border: 3px solid #dee0e0;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 50%;
+  margin: 0 0 0 -10px;
+  position: absolute;
+  top: 4px;
+  width: 14px;
+}
+
+.qodef-workflow .qodef-workflow-item .line {
+  display: none;
+  background-color: #fff;
+  height: 100%;
+  left: 50%;
+  margin-left: -1px;
+  position: absolute;
+  width: 2px;
+}
+
+.qodef-workflow .qodef-workflow-item:first-of-type .line {
+  display: block;
+  top: 4px;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.qodef-workflow .qodef-workflow-item:last-of-type .line {
+  display: block;
+  top: 24px;
+}
+
+.qodef-workflow.qodef-workflow-animate {
+  -webkit-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  opacity: 0;
+  -webkit-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.qodef-workflow.qodef-workflow-animate .main-line {
+  opacity: 0;
+  height: 0;
+  -webkit-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), height 1.8s ease-out;
+  -o-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), height 1.8s ease-out;
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), height 1.8s ease-out;
+}
+
+.qodef-workflow.qodef-workflow-animate .circle {
+  -webkit-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  transform: scale(0.2);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s;
+  transition: -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s;
+  -o-transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s;
+  transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s;
+  transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s, -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.68) 0.5s;
+}
+
+.qodef-workflow.qodef-workflow-animate .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-image {
+  opacity: 0;
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+  -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1);
+  transition: opacity 0.3s ease-out, -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1);
+  -o-transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity 0.3s ease-out;
+  transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity 0.3s ease-out;
+  transition: transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity 0.3s ease-out, -webkit-transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1);
+}
+
+.qodef-workflow.qodef-workflow-animate .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text h4, .qodef-workflow.qodef-workflow-animate .qodef-workflow-item .qodef-workflow-item-inner .qodef-workflow-text p {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+  -o-transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+}
+
+.qodef-workflow.qodef-workflow-animate.qodef-appeared {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.qodef-workflow.qodef-workflow-animate.qodef-appeared .main-line {
+  opacity: 1;
+  height: 100%;
+}
+
+.qodef-workflow.qodef-workflow-animate.qodef-appeared .qodef-workflow-item.qodef-appeared .qodef-workflow-image {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-workflow.qodef-workflow-animate.qodef-appeared .qodef-workflow-item.qodef-appeared .qodef-workflow-text h4, .qodef-workflow.qodef-workflow-animate.qodef-appeared .qodef-workflow-item.qodef-appeared .qodef-workflow-text p {
+  opacity: 1;
+}
+
+.qodef-workflow.qodef-workflow-animate.qodef-appeared .circle {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/*# sourceMappingURL=../../../../plugins/struktur-core/assets/css/shortcodes-map.css.map */

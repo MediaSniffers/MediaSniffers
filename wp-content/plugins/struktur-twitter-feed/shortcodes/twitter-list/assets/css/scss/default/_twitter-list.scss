@@ -1,0 +1,120 @@
+.qodef-twitter-list-holder {
+	@include qodefRelativeHolderLayout();
+	clear: both;
+	
+	.qodef-twitter-list {
+		@include qodefRelativeHolderLayout();
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.qodef-tl-item {
+		@include qodefRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.qodef-tli-inner {
+		@include qodefRelativeHolderLayout();
+		background-color: #ffffff;
+		transition: all .2s ease-in-out;
+		
+		&:hover {
+			box-shadow: -2px 4px 13px 0 rgba(81, 137, 162, .05);
+			transform: translateY(-3px);
+		}
+	}
+	
+	.qodef-tli-content {
+		@include qodefRelativeHolderLayout();
+		padding: 35px 23px;
+		border: 1px solid #f2f2f2;
+		box-sizing: border-box;
+	}
+	
+	.qodef-twitter-content-top {
+		@include qodefRelativeHolderLayout();
+		margin-bottom: 25px;
+		box-sizing: border-box;
+	}
+	
+	.qodef-twitter-link-over {
+		@include qodefAbsoluteHolderLayout();
+		z-index: 1;
+	}
+	
+	.qodef-twitter-user {
+		@include qodefRelativeHolderLayout();
+		padding-right: 30px;
+		box-sizing: border-box;
+		
+		.qodef-twitter-image {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			float: left;
+			width: 56px;
+			height: 56px;
+			
+			img {
+				border-radius: 50%;
+			}
+		}
+		
+		.qodef-twitter-name {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			float: left;
+			width: calc(100% - 56px);
+			padding-left: 15px;
+			box-sizing: border-box;
+			
+			* {
+				margin: 0;
+			}
+		}
+	}
+	
+	.qodef-twitter-icon {
+		position: absolute;
+		top: -7px;
+		right: 3px;
+		width: 20px;
+		display: inline-block;
+		vertical-align: top;
+		color: $first-main-color;
+		font-size: 24px;
+		text-align: right;
+	}
+	
+	.qodef-tweet-text {
+		padding-left: 12px;
+		box-sizing: border-box;
+		
+		a {
+			position: relative;
+			color: #808080;
+			z-index: 2;
+			
+			&:hover {
+				color: $first-main-color;
+			}
+		}
+	}
+	
+	.qodef-twitter-profile {
+		
+		a {
+			position: relative;
+			color: #808080;
+			z-index: 2;
+			
+			&:hover {
+				color: $first-main-color;
+			}
+		}
+	}
+}

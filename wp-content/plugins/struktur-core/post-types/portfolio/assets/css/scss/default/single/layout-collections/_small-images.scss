@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Portfolio Single - Small Images layout style - begin
+   ========================================================================== */
+
+.qodef-portfolio-single-holder {
+    
+    &.qodef-ps-small-images-layout {
+    
+        .qodef-ps-image-holder {
+        
+            .qodef-ps-image {
+                margin: 0 0 20px;
+            
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    
+        @media only screen and (min-width: 1025px) {
+            .qodef-ps-info-holder {
+                padding-left: 35px;
+            }
+        }
+    
+        .qodef-ps-content-item.qodef-ps-info-item {
+            margin: 0 0 33px;
+            
+            p {
+                font-size: 15px;
+                line-height: 24px;
+                font-weight: 400;
+                color: $default-text-color;
+            }
+        }
+        
+        .qodef-ps-title {
+            margin: 0 0 17px;
+        }
+        
+        .qodef-ps-navigation {
+            margin: 55px 0 0;
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio Single - Small Images layout style - end
+   ========================================================================== */

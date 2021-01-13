@@ -1,0 +1,10 @@
+2.0
+- Added Struktur Dashboard
+- Added Elementor compatibility
+- Added Links Over Image hover behavior for Image with text shortcode
+- Added WooCommerce 4.0 compatibility
+- Updated Struktur Core to 1.1
+- Improved Welcome Page
+- Improved Import
+- Changed Struktur Options Position
+- Fixed Custom Cursor style when Masonry portfolio list type is selected
