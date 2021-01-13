@@ -20,22 +20,26 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'mediasniffers' );
+define( 'DB_NAME', $_SERVER["DB_NAME"] );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', $_SERVER["DB_USER"] );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', $_SERVER["DB_PASSWORD"] );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', $_SERVER["DB_HOST"] );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '96M');
+@ini_set( 'memory_limit', '256M' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
